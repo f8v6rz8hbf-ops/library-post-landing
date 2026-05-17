@@ -37,8 +37,8 @@
     .hero h1{font-family:'Cormorant Garamond',serif;font-size:3.8rem;font-weight:300;line-height:1.1;margin:0 0 1rem;color:var(--ink);}
     .hero h1 em{font-style:italic;color:var(--accent);}
     .tagline{font-size:1rem;color:var(--muted);margin:0 0 2.5rem;font-weight:300;line-height:1.7;}
-    .cta-row{display:flex;gap:1rem;justify-content:center;align-items:center;flex-wrap:wrap;}
-    .hero-micro{font-size:.75rem;color:rgba(31,27,22,0.7);margin:0;font-weight:300;}
+    .cta-row{display:flex;gap:.75rem;justify-content:center;align-items:center;flex-wrap:wrap;}
+    .hero-micro{font-size:.75rem;color:rgba(31,27,22,0.7);margin:1rem 0 0;font-weight:300;text-align:center;}
     .trial-note{font-size:.8rem;color:var(--muted);margin-top:1rem;line-height:1.6;}
     .divider{width:40px;height:1px;background:var(--line);margin:0 auto 2rem;}
     .slabel{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 1rem;}
@@ -102,8 +102,38 @@
     .cookie-btns{display:flex;gap:.5rem;flex-shrink:0;}
     .cookie-accept{background:var(--paper);color:var(--ink);border:none;border-radius:2px;padding:.5rem 1rem;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;}
     .cookie-reject{background:transparent;color:var(--paper);border:1px solid rgba(255,255,255,.4);border-radius:2px;padding:.5rem 1rem;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;}
-    .iphone-mockup-container{display:flex;justify-content:center;margin-top:3rem;}
-    .iphone-mockup{width:50%;max-width:350px;height:auto;filter:drop-shadow(0 16px 24px rgba(31,27,22,0.1));}
+    .iphone-mockup-container{display:flex;justify-content:center;margin:3rem 0;padding:0 2rem;}
+    .iphone-frame{width:100%;max-width:400px;aspect-ratio:9/19.5;background:#fbf7ed;border-radius:40px;border:8px solid #1f1b16;box-shadow:0 24px 48px rgba(31,27,22,0.12);overflow:hidden;position:relative;}
+    .iphone-frame::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:40%;height:24px;background:#fbf7ed;border-radius:0 0 24px 24px;z-index:10;}
+    .iphone-screen{width:100%;height:100%;background:white;overflow:hidden;position:relative;padding-top:24px;}
+    .screen-frame{position:absolute;top:24px;left:0;width:100%;height:calc(100% - 24px);opacity:0;transition:opacity 500ms ease;pointer-events:none;}
+    .frame-active{opacity:1;pointer-events:auto;}
+    @keyframes frameSequence{0%{opacity:0;}5%{opacity:1;}47%{opacity:1;}52%{opacity:0;}100%{opacity:0;}}
+    .frame-1{animation:frame1 17s infinite;}
+    .frame-2{animation:frame2 17s infinite;}
+    .frame-3{animation:frame3 17s infinite;}
+    @keyframes frame1{0%{opacity:1;pointer-events:auto;}47%{opacity:1;pointer-events:auto;}52%{opacity:0;pointer-events:none;}100%{opacity:0;pointer-events:none;}}
+    @keyframes frame2{0%{opacity:0;pointer-events:none;}47%{opacity:0;pointer-events:none;}52%{opacity:1;pointer-events:auto;}76%{opacity:1;pointer-events:auto;}81%{opacity:0;pointer-events:none;}100%{opacity:0;pointer-events:none;}}
+    @keyframes frame3{0%{opacity:0;pointer-events:none;}76%{opacity:0;pointer-events:none;}81%{opacity:1;pointer-events:auto;}100%{opacity:1;pointer-events:auto;}}
+    .frame-input{transition:background-color 300ms ease!important;}
+    .frame-btn-gen{transition:all 200ms ease;margin-top:16px;}
+    @keyframes btnPulse{0%{transform:scale(1);}50%{transform:scale(0.95);}100%{transform:scale(1);}}
+    .frame-1 .frame-btn-gen{animation:btnPulse 600ms ease 3s;}
+    @keyframes spin{to{transform:rotate(360deg);}}
+    .frame-spinner{animation:spin 1s linear infinite;display:none!important;}
+    .frame-1 .frame-spinner{animation:spin 1s linear infinite;display:block!important;animation-delay:3s;}
+    .frame-post{animation:fadeInPost 500ms ease 5s forwards;opacity:0;}
+    @keyframes fadeInPost{from{opacity:0;}to{opacity:1;}}
+    .edit-highlight{background:#f6f1e7;border-left:3px solid #7a4f2b;padding-left:8px;margin-bottom:12px;}
+    .edit-text{transition:color 400ms ease 9s;}
+    .frame-2 .edit-text{color:#7a4f2b;font-weight:500;}
+    .frame-2 .edit-text::after{content:' y belleza';animation:textAppear 400ms ease 9s forwards;opacity:0;}
+    @keyframes textAppear{from{opacity:0;content:' y conocimiento';}to{opacity:1;content:' y belleza';}}
+    .saved-check{animation:fadeIn 300ms ease 9s forwards;opacity:0;}
+    @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+    .calendar-highlight{background:#1f1b16;color:#fbf7ed;border-radius:4px;font-weight:500;position:relative;}
+    @media(max-width:600px){
+      .iphone-frame{max-width:300px;}
     .fmt-card{transition:transform 250ms ease,box-shadow 250ms ease;}
     .fmt-card:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(31,27,22,0.08);}
     .plan{transition:transform 250ms ease,box-shadow 250ms ease;}
@@ -163,12 +193,10 @@
       <h1 id="hero-h1">Tu librería,<br><em id="hero-em">con voz propia</em></h1>
       <p class="tagline" id="hero-tagline">Genera contenido para Instagram en segundos.<br>Con tu tono, tu personalidad y tu forma de hablar a tus lectores.</p>
       <div class="cta-row">
-        <div style="display:flex;flex-direction:column;align-items:center;gap:.75rem;">
-          <a href="https://my.librarypost.app/sign-up" target="_blank" class="btn" id="hero-cta">EMPEZAR GRATIS</a>
-          <p class="hero-micro" id="hero-micro">Obtén 5 generaciones de prueba, sin tarjeta</p>
-        </div>
+        <a href="https://my.librarypost.app/sign-up" target="_blank" class="btn" id="hero-cta">EMPEZAR GRATIS</a>
         <a href="https://my.librarypost.app/sign-in" target="_blank" class="btn-g" id="hero-login">Ya tengo cuenta</a>
       </div>
+      <p class="hero-micro" id="hero-micro">Obtén 5 generaciones de prueba, sin tarjeta</p>
       <p class="trial-note" id="hero-note">Sin tarjeta de crédito para empezar · Cuando tus 5 generaciones se agoten, elige tu plan y disfruta de 7 días gratis antes de que se realice ningún cobro.</p>
     </section>
 
@@ -204,26 +232,41 @@
         <div class="step"><div class="step-n">03</div><h3 id="step3-h">Publica o planifica</h3><p id="step3-p">Edita, guarda en tu biblioteca y decide si lo publicas ahora o lo planificas en el calendario.</p></div>
       </div>
       <div class="iphone-mockup-container">
-        <svg viewBox="0 0 390 844" class="iphone-mockup" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <filter id="iphone-shadow" x="-50%" y="-50%" width="200%" height="200%">
-              <feDropShadow dx="0" dy="8" stdDeviation="12" flood-opacity="0.1" flood-color="#1f1b16"/>
-            </filter>
-          </defs>
-          <rect width="390" height="844" rx="60" fill="#fbf7ed" stroke="#1f1b16" stroke-width="8" filter="url(#iphone-shadow)"/>
-          <rect x="8" y="8" width="374" height="828" rx="52" fill="#f6f1e7"/>
-          <rect x="130" y="0" width="130" height="32" rx="0" fill="#fbf7ed" stroke="#1f1b16" stroke-width="8"/>
-          <rect x="12" y="44" width="366" height="742" rx="40" fill="white" overflow="hidden">
-            <rect x="0" y="0" width="366" height="100" fill="#fbf7ed" stroke-bottom="1px solid #c9beac"/>
-            <text x="18" y="35" font-family="Cormorant Garamond, serif" font-size="24" font-weight="300" fill="#1f1b16">El viaje de</text>
-            <text x="18" y="65" font-family="Cormorant Garamond, serif" font-size="24" font-weight="300" fill="#1f1b16">Don Quijote</text>
-            <text x="18" y="90" font-family="Inter, sans-serif" font-size="12" fill="#6b6357">Miguel de Cervantes</text>
-            <rect x="0" y="110" width="366" height="1" fill="#c9beac"/>
-            <text x="18" y="145" font-family="Cormorant Garamond, serif" font-size="16" font-style="italic" fill="#7a4f2b" font-weight="300">«Un clásico que desafía el tiempo. La historia de un caballero andante que busca aventuras en la España medieval.»</text>
-            <text x="18" y="240" font-family="Inter, sans-serif" font-size="13" fill="#1f1b16" font-weight="500">#DonQuijote #Clásicos #LiteraturaEspañola #LibrosQueMarcan #LeerEsViajar #BibliotecaIndependiente</text>
-            <circle cx="183" cy="310" r="12" fill="#7a4f2b" opacity="0.2"/>
-          </rect>
-        </svg>
+        <div class="iphone-frame">
+          <div class="iphone-screen">
+            <div class="screen-frame frame-1 frame-active">
+              <div style="padding:16px;font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:#1f1b16;margin-bottom:20px;">LibraryPost</div>
+              <input type="text" placeholder="El nombre de la rosa" class="frame-input" style="display:block;width:calc(100% - 32px);margin:0 16px 12px;padding:10px;border:1px solid #c9beac;border-radius:4px;font-size:14px;font-family:Inter,sans-serif;" disabled>
+              <input type="text" placeholder="Umberto Eco" class="frame-input" style="display:block;width:calc(100% - 32px);margin:0 16px 12px;padding:10px;border:1px solid #c9beac;border-radius:4px;font-size:14px;font-family:Inter,sans-serif;" disabled>
+              <select class="frame-input" style="display:block;width:calc(100% - 32px);margin:0 16px 16px;padding:10px;border:1px solid #c9beac;border-radius:4px;font-size:14px;font-family:Inter,sans-serif;" disabled>
+                <option>Post de feed</option>
+              </select>
+              <button class="frame-btn-gen" style="display:block;margin:0 auto;padding:8px 20px;background:#1f1b16;color:#fbf7ed;border:none;border-radius:4px;font-size:12px;font-weight:500;cursor:pointer;">GENERAR</button>
+              <div class="frame-spinner" style="display:none;width:24px;height:24px;border:2px solid #c9beac;border-top:2px solid #1f1b16;border-radius:50%;margin:20px auto;animation:spin 1s linear infinite;"></div>
+              <div class="frame-post" style="display:none;padding:16px;margin-top:20px;font-size:13px;line-height:1.6;color:#1f1b16;font-family:Inter,sans-serif;">Una historia de misterio, fe y conocimiento perdido. Umberto Eco nos lleva a un monasterio medieval donde cada página esconde una verdad. 📖✨<br><br>¿Cuántos secretos caben en una biblioteca?<br><br><span style="font-weight:500;">#ElNombreDeLaRosa #UmbertoEco #Libros #LecturaSemanal</span></div>
+            </div>
+            <div class="screen-frame frame-2" style="display:none;opacity:0;">
+              <div style="padding:16px;font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:#1f1b16;margin-bottom:20px;">LibraryPost</div>
+              <div style="padding:16px;margin-top:20px;font-size:13px;line-height:1.6;color:#1f1b16;font-family:Inter,sans-serif;">
+                <div class="edit-highlight">Una historia de misterio, <span class="edit-text">fe y conocimiento</span> perdido. Umberto Eco nos lleva a un monasterio medieval donde cada página esconde una verdad. 📖✨</div>
+                <div style="margin-top:12px;">¿Cuántos secretos caben en una biblioteca?</div>
+                <div style="margin-top:12px;font-weight:500;">#ElNombreDeLaRosa #UmbertoEco #Libros #LecturaSemanal</div>
+                <div class="saved-check" style="margin-top:16px;color:#7a4f2b;font-size:12px;opacity:0;">✓ Guardado</div>
+              </div>
+            </div>
+            <div class="screen-frame frame-3" style="display:none;opacity:0;">
+              <div style="padding:16px;font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:300;color:#1f1b16;margin-bottom:16px;">Mayo 2026</div>
+              <div class="calendar-grid" style="display:grid;grid-template-columns:repeat(7,1fr);gap:8px;padding:0 16px;font-size:11px;font-family:Inter,sans-serif;text-align:center;">
+                <div style="color:#6b6357;font-weight:500;">L</div><div style="color:#6b6357;font-weight:500;">M</div><div style="color:#6b6357;font-weight:500;">M</div><div style="color:#6b6357;font-weight:500;">J</div><div style="color:#6b6357;font-weight:500;">V</div><div style="color:#6b6357;font-weight:500;">S</div><div style="color:#6b6357;font-weight:500;">D</div>
+                <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div>
+                <div>8</div><div>9</div><div>10</div><div>11</div><div>12</div><div>13</div><div>14</div>
+                <div>15</div><div>16</div><div>17</div><div>18</div><div>19</div><div>20</div><div>21</div>
+                <div class="calendar-highlight">22</div><div>23</div><div>24</div><div>25</div><div>26</div><div>27</div><div>28</div>
+              </div>
+              <div style="padding:0 16px;margin-top:16px;font-size:12px;color:#6b6357;text-align:center;">Tu contenido, organizado</div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -367,6 +410,7 @@ function showPage(p){document.getElementById('main-content').style.display='none
 function showMain(){document.getElementById('legal-pages').style.display='none';document.getElementById('main-content').style.display='block';window.scrollTo(0,0);}
 function closeCookies(){document.getElementById('cookie-banner').style.display='none';}
 document.querySelectorAll('.faq-item').forEach(item=>{item.addEventListener('click',function(){this.classList.toggle('collapsed');});item.classList.add('collapsed');});
+setInterval(()=>{const t=Date.now()%17000;if(t>=9000&&t<9500){const e=document.querySelector('.edit-text');if(e.textContent==='fe y conocimiento'){e.textContent='fe, conocimiento y belleza';e.style.color='#7a4f2b';e.style.fontWeight='500';const c=document.querySelector('.saved-check');c.style.animation='fadeIn 300ms ease forwards';c.style.opacity='1';}}else if(t<9000){const e=document.querySelector('.edit-text');if(e.textContent!=='fe y conocimiento'){e.textContent='fe y conocimiento';e.style.color='#1f1b16';e.style.fontWeight='normal';}const c=document.querySelector('.saved-check');c.style.opacity='0';}},100);
 fetch('https://ipapi.co/json/').then(r=>r.json()).then(d=>{applyLang(cL[d.country_code]||'en');}).catch(()=>applyLang('es'));
 </script>
 </body>
