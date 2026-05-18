@@ -171,6 +171,8 @@
     .ipad-f3-title{font-size:12px;font-family:'Cormorant Garamond',serif;font-weight:400;text-align:center;margin:0 0 8px;color:#1f1b16;}
     .ipad-cal-note{font-size:8px;font-family:Inter,sans-serif;color:rgba(31,27,22,.5);margin-top:6px;}
     .ipad-cal-caption{font-size:11px;font-family:'Cormorant Garamond',serif;font-weight:300;color:rgba(31,27,22,.5);text-align:center;margin-top:8px;}
+    /* Nav buttons — hidden until hero scrolls out */
+    .lp-nav-r .btn,.lp-nav-r .btn-g{opacity:0;pointer-events:none;transition:opacity .3s ease;}
     /* Hover interactions */
     .fmt-card{transition:transform 250ms ease,box-shadow 250ms ease;}
     .fmt-card:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(31,27,22,.08);}
@@ -635,6 +637,8 @@ function loadAnalytics(){
   document.head.appendChild(s);
 }
 function toggleCkDetail(){document.getElementById('ck-table-wrap').classList.toggle('open');}
+const _navBtns=document.querySelectorAll('.lp-nav-r .btn,.lp-nav-r .btn-g');
+new IntersectionObserver(([e])=>{const p=!e.isIntersecting;_navBtns.forEach(b=>{b.style.opacity=p?'1':'0';b.style.pointerEvents=p?'auto':'none';});},{threshold:0}).observe(document.querySelector('.hero'));
 fetch('https://ipapi.co/json/').then(r=>r.json()).then(d=>{applyLang(detectLang(d.country_code));}).catch(()=>applyLang(detectLang(null)));
 initCookies();
 </script>
