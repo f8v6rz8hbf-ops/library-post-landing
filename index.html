@@ -98,7 +98,7 @@
     .faq-a{font-size:.9rem;color:var(--muted);line-height:1.7;}
     .legal-pages{display:none;}
     .legal-page{padding:4rem 2rem;max-width:680px;margin:0 auto;}
-    .legal-page h1{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:400;margin:0 0 .5rem;color:var(--ink);}
+    .legal-page h1,.legal-page-title{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:400;margin:0 0 .5rem;color:var(--ink);}
     .legal-page .date{font-size:.8rem;color:var(--muted);margin:0 0 2rem;}
     .legal-page h2{font-size:1rem;font-weight:500;margin:1.5rem 0 .5rem;color:var(--ink);}
     .legal-page p{font-size:.9rem;color:var(--muted);line-height:1.7;margin:0 0 .75rem;}
@@ -183,7 +183,12 @@
     .plan:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(31,27,22,.08);}
     .faq-a{max-height:500px;overflow:hidden;transition:max-height 300ms ease,opacity 300ms ease;opacity:1;padding-bottom:1.25rem;}
     .faq-item.collapsed .faq-a{max-height:0;opacity:0;padding-bottom:0;}
+    .skip-link{position:absolute;top:-40px;left:0;background:var(--ink);color:var(--cream);padding:.5rem 1rem;text-decoration:none;z-index:10000;font-family:'Inter',sans-serif;font-size:.85rem;}
+    .skip-link:focus{top:0;}
+    .btn,.btn-g{min-height:44px;}
     .btn:focus-visible,.btn-g:focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
+    a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+    .ft-lb:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
     @media(max-width:600px){
       .hero h1{font-size:2.6rem;}
       .lp-nav{padding:1rem;}
@@ -198,9 +203,10 @@
 </head>
 <body>
 
+<a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 <div class="lp" id="lp">
   <div class="ck-overlay" id="ck-overlay" style="display:none;">
-    <div class="ck-modal">
+    <div class="ck-modal" role="dialog" aria-modal="true" aria-labelledby="ck-title">
       <p class="ck-logo">LibraryPost</p>
       <h2 class="ck-title" id="ck-title">Usamos cookies</h2>
       <p class="ck-desc" id="ck-desc">Usamos cookies esenciales para que la app funcione y cookies analíticas (Vercel Analytics) para mejorar la experiencia. Puedes elegir qué aceptar.</p>
@@ -233,7 +239,7 @@
   </div>
 
   <div id="main-content">
-    <nav class="lp-nav">
+    <nav class="lp-nav" aria-label="Navegación principal">
       <div class="lp-logo">LibraryPost</div>
       <div class="lp-nav-r">
         <a href="https://my.librarypost.app/sign-in" target="_blank" class="btn-g" id="nav-signin">Entrar</a>
@@ -410,7 +416,7 @@
             <li><span class="feat-check">✓</span><span id="feat-b3">Biblioteca ilimitada</span></li>
             <li><span class="feat-none">—</span><span id="feat-b4">Calendario</span></li>
           </ul>
-          <a href="https://my.librarypost.app/sign-up" target="_blank" class="btn-g" id="ps1" style="width:100%;text-align:center;">Empezar</a>
+          <a href="https://my.librarypost.app/sign-up" target="_blank" class="btn-g" id="ps1" style="width:100%;text-align:center;" aria-label="Empezar plan Basic — 17€ por mes">Empezar</a>
         </div>
         <div class="plan featured">
           <div class="plan-badge" id="plan-badge">Más popular</div>
@@ -421,7 +427,7 @@
             <li><span class="feat-check">✓</span><span id="feat-s3">Biblioteca ilimitada</span></li>
             <li><span class="feat-check">✓</span><span id="feat-s4">Calendario</span></li>
           </ul>
-          <a href="https://my.librarypost.app/sign-up" target="_blank" class="btn" id="ps2" style="width:100%;text-align:center;">Empezar</a>
+          <a href="https://my.librarypost.app/sign-up" target="_blank" class="btn" id="ps2" style="width:100%;text-align:center;" aria-label="Empezar plan Standard — 35€ por mes. Más popular.">Empezar</a>
         </div>
         <div class="plan">
           <p class="plan-name">Premium</p><div class="plan-price">69€</div><p class="plan-period" id="period-prem">al mes</p>
@@ -431,7 +437,7 @@
             <li><span class="feat-check">✓</span><span id="feat-p3">Biblioteca ilimitada</span></li>
             <li><span class="feat-check">✓</span><span id="feat-p4">Calendario</span></li>
           </ul>
-          <a href="https://my.librarypost.app/sign-up" target="_blank" class="btn-g" id="ps3" style="width:100%;text-align:center;">Empezar</a>
+          <a href="https://my.librarypost.app/sign-up" target="_blank" class="btn-g" id="ps3" style="width:100%;text-align:center;" aria-label="Empezar plan Premium — 69€ por mes">Empezar</a>
         </div>
       </div>
       <p class="price-fmt-note" id="price-fmt-note">Todos los planes incluyen Post de feed, Story, Carrusel y Reel</p>
@@ -468,7 +474,7 @@
         <a onclick="showPage('cookies')" id="footer-cookies">Política de cookies</a>
       </p>
       <div class="ft-ls">
-        <button class="ft-lb" onclick="toggleFtLang()">
+        <button class="ft-lb" id="ft-lang-btn" onclick="toggleFtLang()" aria-label="Cambiar idioma" aria-expanded="false" aria-controls="ftLangDropdown">
           <i class="ti ti-world" aria-hidden="true" style="font-size:12px;"></i>
           <span id="ft-lang-name">Español</span>
           <span style="font-size:9px;opacity:.6;">▾</span>
@@ -488,12 +494,12 @@
   </div>
 
   <div class="legal-pages" id="legal-pages">
-    <nav class="lp-nav">
+    <nav class="lp-nav" aria-label="Navegación de página legal">
       <div class="lp-logo">LibraryPost</div>
       <button class="btn-g" onclick="showMain()" id="back-to-main">← Volver</button>
     </nav>
     <div id="page-privacy" class="legal-page" style="display:none;">
-      <h1>Política de Privacidad</h1>
+      <h2 class="legal-page-title">Política de Privacidad</h2>
       <p class="date">Última actualización: 16 de mayo de 2026</p>
       <h2>1. Responsable del tratamiento</h2>
       <p>LibraryPost, con correo de contacto hello@librarypost.app, es el responsable del tratamiento de los datos personales recogidos a través de librarypost.app.</p>
@@ -511,7 +517,7 @@
       <p>Algunos de nuestros proveedores (Stripe, Vercel, Clerk) están ubicados fuera del Espacio Económico Europeo. En todos los casos operamos bajo garantías adecuadas conforme al RGPD.</p>
     </div>
     <div id="page-terms" class="legal-page" style="display:none;">
-      <h1>Términos y Condiciones</h1>
+      <h2 class="legal-page-title">Términos y Condiciones</h2>
       <p class="date">Última actualización: 16 de mayo de 2026</p>
       <h2>1. Descripción del servicio</h2>
       <p>LibraryPost es una herramienta de generación de contenido para Instagram dirigida a librerías independientes. El servicio se presta a través de my.librarypost.app.</p>
@@ -529,7 +535,7 @@
       <p>Estos términos se rigen por la legislación española. Para cualquier controversia, las partes se someten a los juzgados competentes conforme a la normativa aplicable.</p>
     </div>
     <div id="page-cookies" class="legal-page" style="display:none;">
-      <h1>Política de Cookies</h1>
+      <h2 class="legal-page-title">Política de Cookies</h2>
       <p class="date">Última actualización: 16 de mayo de 2026</p>
       <h2>1. ¿Qué son las cookies?</h2>
       <p>Las cookies son pequeños archivos de texto que se almacenan en tu dispositivo cuando visitas un sitio web. Nos ayudan a recordar tus preferencias y a entender cómo usas la aplicación.</p>
@@ -631,9 +637,9 @@ function applyLang(lang){document.documentElement.lang=lang;const t=T[lang];cons
 const LP_SUPPORTED=['es','en','pt','fr','de','it','nl'];
 const LP_LANG_NAMES={es:'Español',en:'English',pt:'Português',fr:'Français',de:'Deutsch',it:'Italiano',nl:'Nederlands'};
 function detectLang(cc){const sv=localStorage.getItem('lpLang');if(sv&&LP_SUPPORTED.includes(sv))return sv;if(cc&&cL[cc])return cL[cc];const nv=(navigator.language||'').split('-')[0].toLowerCase();return LP_SUPPORTED.includes(nv)?nv:'en';}
-function setLang(l){localStorage.setItem('lpLang',l);applyLang(l);const dd=document.getElementById('ftLangDropdown');if(dd)dd.classList.remove('open');}
-function toggleFtLang(){document.getElementById('ftLangDropdown').classList.toggle('open');}
-document.addEventListener('click',function(e){if(!e.target.closest('.ft-ls')){const dd=document.getElementById('ftLangDropdown');if(dd)dd.classList.remove('open');}});
+function setLang(l){localStorage.setItem('lpLang',l);applyLang(l);const btn=document.getElementById('ft-lang-btn');const dd=document.getElementById('ftLangDropdown');if(dd)dd.classList.remove('open');if(btn)btn.setAttribute('aria-expanded','false');}
+function toggleFtLang(){const btn=document.getElementById('ft-lang-btn');const dd=document.getElementById('ftLangDropdown');dd.classList.toggle('open');btn.setAttribute('aria-expanded',dd.classList.contains('open')?'true':'false');}
+document.addEventListener('click',function(e){if(!e.target.closest('.ft-ls')){const btn=document.getElementById('ft-lang-btn');const dd=document.getElementById('ftLangDropdown');if(dd)dd.classList.remove('open');if(btn)btn.setAttribute('aria-expanded','false');}});
 function showPage(p){document.getElementById('main-content').style.display='none';document.getElementById('legal-pages').style.display='block';['privacy','terms','cookies'].forEach(x=>document.getElementById('page-'+x).style.display='none');document.getElementById('page-'+p).style.display='block';window.scrollTo(0,0);}
 function showMain(){document.getElementById('legal-pages').style.display='none';document.getElementById('main-content').style.display='block';window.scrollTo(0,0);}
 function toggleFaq(btn){const item=btn.closest('.faq-item');const expanded=btn.getAttribute('aria-expanded')==='true';btn.setAttribute('aria-expanded',String(!expanded));btn.querySelector('.faq-icon').textContent=expanded?'+':'−';item.classList.toggle('collapsed',expanded);}
