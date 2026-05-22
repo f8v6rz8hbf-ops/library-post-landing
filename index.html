@@ -100,8 +100,19 @@
     .legal-page{padding:4rem 2rem;max-width:680px;margin:0 auto;}
     .legal-page h1,.legal-page-title{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:400;margin:0 0 .5rem;color:var(--ink);}
     .legal-page .date{font-size:.8rem;color:var(--muted);margin:0 0 2rem;}
-    .legal-page h2{font-size:1rem;font-weight:500;margin:1.5rem 0 .5rem;color:var(--ink);}
-    .legal-page p{font-size:.9rem;color:var(--muted);line-height:1.7;margin:0 0 .75rem;}
+    .legal-page h2{font-size:1rem;font-weight:500;margin:1.5rem 0 .5rem;padding-bottom:.4rem;border-bottom:1px solid var(--line);color:var(--ink);}
+    .legal-page h3{font-size:.85rem;font-weight:500;margin:.25rem 0 .3rem;color:var(--ink);}
+    .legal-page p{font-size:.875rem;color:var(--muted);line-height:1.7;margin:0 0 .75rem;}
+    .legal-page ul{list-style:none;padding:0;margin:0 0 .75rem;}
+    .legal-page ul li{font-size:.875rem;color:var(--muted);line-height:1.7;padding:.2rem 0 .2rem 1rem;position:relative;}
+    .legal-page ul li::before{content:'–';position:absolute;left:0;color:var(--line);}
+    .legal-page a{color:var(--accent);text-decoration:none;}
+    .legal-page a:hover{text-decoration:underline;}
+    .legal-service-card{background:#f5f0e8;border-left:2px solid var(--line);padding:.75rem 1rem;margin:.5rem 0;border-radius:2px;}
+    .legal-service-card h3{margin:0 0 .25rem;}
+    .legal-service-card p{margin:0;font-size:.85rem;}
+    .legal-info-box{background:#f5f0e8;border-left:2px solid var(--line);padding:.75rem 1rem;margin:1rem 0;border-radius:2px;}
+    .legal-info-box p{margin:0;font-size:.85rem;}
     footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--line);}
     footer .f-logo{font-family:'Cormorant Garamond',serif;font-size:1.2rem;margin:0 0 1rem;color:var(--ink);}
     footer p{font-size:.85rem;color:var(--muted);margin:0 0 .5rem;}
@@ -564,21 +575,104 @@
     </nav>
     <div id="page-privacy" class="legal-page" style="display:none;">
       <h2 class="legal-page-title">Política de Privacidad</h2>
-      <p class="date">Última actualización: 16 de mayo de 2026</p>
+      <p class="date">Última actualización: mayo de 2026</p>
+
       <h2>1. Responsable del tratamiento</h2>
-      <p>LibraryPost, con correo de contacto hello@librarypost.app, es el responsable del tratamiento de los datos personales recogidos a través de librarypost.app.</p>
+      <p><strong>LibraryPost</strong> es el responsable del tratamiento de los datos personales recogidos a través de <strong>librarypost.app</strong> y <strong>my.librarypost.app</strong>.</p>
+      <div class="legal-info-box">
+        <p>Contacto: <a href="mailto:hello@librarypost.app">hello@librarypost.app</a> · Servicio operado desde España.</p>
+      </div>
+
       <h2>2. Datos que recogemos</h2>
-      <p>Recogemos los datos que nos proporcionas al registrarte (nombre, correo electrónico, datos de pago a través de Stripe) y los datos de uso de la aplicación (libros generados, formatos, fechas de publicación). No vendemos tus datos a terceros.</p>
-      <h2>3. Finalidad del tratamiento</h2>
-      <p>Usamos tus datos para prestarte el servicio de LibraryPost, gestionar tu suscripción, enviarte comunicaciones relacionadas con tu cuenta y mejorar la aplicación.</p>
-      <h2>4. Base legal</h2>
-      <p>El tratamiento se basa en la ejecución del contrato de suscripción (art. 6.1.b RGPD) y en el consentimiento para comunicaciones opcionales (art. 6.1.a RGPD).</p>
-      <h2>5. Tus derechos</h2>
-      <p>Tienes derecho a acceder, rectificar, suprimir, oponerte y solicitar la portabilidad de tus datos. Puedes ejercerlos escribiendo a hello@librarypost.app. También tienes derecho a presentar una reclamación ante la Agencia Española de Protección de Datos (aepd.es).</p>
-      <h2>6. Conservación</h2>
-      <p>Conservamos tus datos mientras mantengas una cuenta activa y durante el periodo legalmente exigido tras la cancelación. Puedes solicitar la eliminación completa de tus datos en cualquier momento.</p>
+      <p>Solo recogemos los datos estrictamente necesarios para prestarte el servicio:</p>
+      <div class="legal-service-card">
+        <h3>Datos de cuenta</h3>
+        <p>Nombre de la librería, ciudad, país, correo electrónico e idioma de la interfaz. Los recogemos al registrarte.</p>
+      </div>
+      <div class="legal-service-card">
+        <h3>Datos de pago</h3>
+        <p>Gestionados íntegramente por Stripe. LibraryPost únicamente almacena el identificador de cliente Stripe, el plan activo y las fechas de renovación. Nunca almacenamos números de tarjeta.</p>
+      </div>
+      <div class="legal-service-card">
+        <h3>Datos de uso</h3>
+        <p>Número de generaciones y retoques realizados, formato elegido, plan contratado y biblioteca de contenido guardado.</p>
+      </div>
+      <div class="legal-service-card">
+        <h3>Contenido generado</h3>
+        <p>El título del libro, autor, contexto y nombre de evento que introduces para generar contenido, y el resultado guardado en tu biblioteca.</p>
+      </div>
+      <p><strong>Nunca vendemos datos a terceros.</strong></p>
+
+      <h2>3. Proveedores y subencargados</h2>
+      <p>Para operar el servicio recurrimos a los siguientes proveedores, cada uno con acceso únicamente a los datos necesarios para su función:</p>
+      <div class="legal-service-card">
+        <h3>Autenticación — <a href="https://clerk.com/legal/privacy" target="_blank" rel="noopener noreferrer">Clerk</a></h3>
+        <p>Gestiona el inicio de sesión y las sesiones activas. Procesa tu correo electrónico y las cookies de sesión.</p>
+      </div>
+      <div class="legal-service-card">
+        <h3>Pagos — <a href="https://stripe.com/es/privacy" target="_blank" rel="noopener noreferrer">Stripe</a></h3>
+        <p>Procesa los cobros de la suscripción. Aplica medidas de seguridad PCI-DSS. LibraryPost solo recibe confirmaciones de pago.</p>
+      </div>
+      <div class="legal-service-card">
+        <h3>Base de datos — <a href="https://neon.tech/privacy" target="_blank" rel="noopener noreferrer">Neon</a></h3>
+        <p>Almacena tu cuenta, configuración y biblioteca de contenido en servidores PostgreSQL cifrados en reposo.</p>
+      </div>
+      <div class="legal-service-card">
+        <h3>Correo electrónico — <a href="https://resend.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Resend</a></h3>
+        <p>Envía los correos transaccionales de tu cuenta: confirmaciones, avisos de renovación y notificaciones de pago.</p>
+      </div>
+      <div class="legal-service-card">
+        <h3>Alojamiento — <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Vercel</a></h3>
+        <p>Sirve la aplicación web. Puede registrar IPs y user-agents en sus logs de infraestructura durante un período limitado.</p>
+      </div>
+      <div class="legal-service-card">
+        <h3>Inteligencia artificial — <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Gemini API</a></h3>
+        <p>Genera el contenido de Instagram. Procesa el título, autor y contexto de tu solicitud. No lo utiliza para entrenar modelos.</p>
+      </div>
+      <div class="legal-service-card">
+        <h3>Geolocalización — <a href="https://ipapi.co/privacy/" target="_blank" rel="noopener noreferrer">ipapi.co</a></h3>
+        <p>Detecta el país de origen al registrarte para preseleccionar idioma. Solo se consulta una vez durante el registro.</p>
+      </div>
+      <div class="legal-service-card">
+        <h3>Analítica — <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Vercel Analytics</a></h3>
+        <p>Solo se activa con tu consentimiento explícito. Recoge métricas agregadas y anónimas sin identificarte individualmente.</p>
+      </div>
+
+      <h2>4. Finalidad del tratamiento</h2>
+      <ul>
+        <li>Prestar el servicio de generación de contenido para Instagram.</li>
+        <li>Gestionar tu suscripción, períodos de prueba y cobros recurrentes.</li>
+        <li>Enviarte comunicaciones de cuenta esenciales (renovación, fallo de pago, cambios de plan).</li>
+        <li>Mejorar la calidad y el rendimiento de la aplicación.</li>
+      </ul>
+
+      <h2>5. Base legal</h2>
+      <ul>
+        <li><strong>Ejecución del contrato (art. 6.1.b RGPD):</strong> datos de cuenta, uso y pago necesarios para prestar el servicio.</li>
+        <li><strong>Consentimiento (art. 6.1.a RGPD):</strong> cookies analíticas opcionales. Puedes retirarlo en cualquier momento.</li>
+        <li><strong>Interés legítimo (art. 6.1.f RGPD):</strong> protección antifraude, logs de infraestructura y geolocalización en el registro.</li>
+      </ul>
+
+      <h2>6. Cookies</h2>
+      <p>Utilizamos cookies técnicas imprescindibles (sesión, pago, protección antifraude) y cookies analíticas opcionales (Vercel Analytics). Las analíticas solo se activan con tu consentimiento explícito. Puedes cambiar tu elección borrando las cookies del dominio desde tu navegador.</p>
+
       <h2>7. Transferencias internacionales</h2>
-      <p>Algunos de nuestros proveedores (Stripe, Vercel, Clerk) están ubicados fuera del Espacio Económico Europeo. En todos los casos operamos bajo garantías adecuadas conforme al RGPD.</p>
+      <p>Algunos proveedores pueden procesar datos fuera del Espacio Económico Europeo, principalmente en EE.UU. Las transferencias se realizan bajo garantías adecuadas:</p>
+      <ul>
+        <li><strong>Cláusulas contractuales tipo</strong> aprobadas por la Comisión Europea (decisión 2021/914).</li>
+        <li><strong>Data Privacy Framework (DPF)</strong> UE-EE.UU. para los proveedores adheridos. Más información en <a href="https://www.dataprivacyframework.gov" target="_blank" rel="noopener noreferrer">dataprivacyframework.gov</a>.</li>
+      </ul>
+
+      <h2>8. Conservación de los datos</h2>
+      <p>Conservamos tus datos mientras tu cuenta esté activa. Tras la cancelación, mantenemos exclusivamente los registros de facturación durante el período legalmente exigible (5 años para datos contables en España). El resto se elimina en un plazo máximo de 30 días. Puedes solicitar la eliminación completa en cualquier momento.</p>
+
+      <h2>9. IA y contenido generado</h2>
+      <div class="legal-info-box">
+        <p>El contenido que generas <strong>no se utiliza para entrenar modelos de IA</strong>. Tus datos y el contenido producido son exclusivamente tuyos.</p>
+      </div>
+
+      <h2>10. Tus derechos</h2>
+      <p>Puedes ejercer en cualquier momento los derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad. Escríbenos a <a href="mailto:hello@librarypost.app">hello@librarypost.app</a> y te respondemos en un máximo de 30 días. También puedes reclamar ante la <a href="https://www.aepd.es" target="_blank" rel="noopener noreferrer">Agencia Española de Protección de Datos (AEPD)</a>.</p>
     </div>
     <div id="page-terms" class="legal-page" style="display:none;">
       <h2 class="legal-page-title">Términos y Condiciones</h2>
