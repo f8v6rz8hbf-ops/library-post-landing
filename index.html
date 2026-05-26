@@ -113,6 +113,17 @@
     .legal-service-card p{margin:0;font-size:.85rem;}
     .legal-info-box{background:#f5f0e8;border-left:2px solid var(--line);padding:.75rem 1rem;margin:1rem 0;border-radius:2px;}
     .legal-info-box p{margin:0;font-size:.85rem;}
+    .legal-table{width:100%;border-collapse:collapse;margin:1rem 0 1.5rem;font-size:.85rem;}
+    .legal-table th{background:var(--paper);border:1px solid var(--line);padding:.5rem .75rem;text-align:left;font-weight:500;color:var(--ink);}
+    .legal-table td{border:1px solid var(--line);padding:.5rem .75rem;color:var(--muted);}
+    .legal-toc{background:var(--paper);border:1px solid var(--line);padding:1.25rem 1.5rem;margin:1.5rem 0;}
+    .legal-toc h2{font-size:1rem;margin:0 0 .75rem;border:none;padding:0;}
+    .legal-toc ol{margin:0;padding-left:1.25rem;}
+    .legal-toc li{font-size:.9rem;color:var(--muted);margin-bottom:.35rem;}
+    .legal-page dl{margin:1rem 0;}
+    .legal-page dt{margin-top:1rem;color:var(--ink);font-size:.875rem;}
+    .legal-page dd{margin-left:1.5rem;color:var(--muted);font-size:.9rem;line-height:1.6;}
+    .legal-page h4{font-size:.82rem;font-weight:600;margin:1.25rem 0 .3rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;}
     footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--line);}
     footer .f-logo{font-family:'Cormorant Garamond',serif;font-size:1.2rem;margin:0 0 1rem;color:var(--ink);}
     footer p{font-size:.85rem;color:var(--muted);margin:0 0 .5rem;}
@@ -574,13 +585,397 @@
       <button class="btn-g" onclick="showMain()" id="back-to-main">← Volver</button>
     </nav>
     <div id="page-privacy" class="legal-page" style="display:none;">
-      <div id="privacy-content-render"></div>
+      <h1>Política de Privacidad de LibraryPost</h1>
+      <p>Bienvenido a la política de privacidad de LibraryPost. Esta política le ayudará a entender qué datos recogemos, por qué los recogemos y qué derechos tiene usted al respecto.</p>
+      <p><strong>Última revisión: 26 mayo 2026</strong></p>
+
+      <nav class="legal-toc">
+        <h2>Índice</h2>
+        <ol>
+          <li>Titular y Responsable del tratamiento</li>
+          <li>Tipos de Datos que recogemos</li>
+          <li>Modalidad y lugar del tratamiento</li>
+          <li>Finalidad del tratamiento</li>
+          <li>Información detallada del tratamiento</li>
+          <li>Política de Cookies</li>
+          <li>Más información para usuarios en la Unión Europea</li>
+          <li>Más información para usuarios en Suiza</li>
+          <li>Más información para usuarios en Brasil</li>
+          <li>Información adicional para usuarios en Estados Unidos</li>
+          <li>Información adicional sobre la recogida de Datos</li>
+          <li>Definiciones y referencias legales</li>
+        </ol>
+      </nav>
+
+      <h2>1. Titular y Responsable del tratamiento</h2>
+      <p>LibraryPost<br>Calle Blas de Otero 1, 48014 Bilbao, España<br>Correo electrónico: <a href="mailto:hello@librarypost.app">hello@librarypost.app</a></p>
+
+      <h2>2. Tipos de Datos que recogemos</h2>
+      <p>Entre las clases de Datos Personales que recoge esta Aplicación, ya sea directamente o a través de terceros, se encuentran: nombre, apellido(s), dirección de correo electrónico, Datos de uso y Rastreadores.</p>
+      <p>Los Datos Personales podrán ser proporcionados libremente por el Usuario o, en caso de los Datos de Uso, serán recogidos automáticamente cuando se utilice esta Aplicación. Salvo que se indique lo contrario, todos los Datos solicitados son obligatorios.</p>
+
+      <h2>3. Modalidad y lugar del tratamiento</h2>
+      <h3>Modalidades de Tratamiento</h3>
+      <p>El Titular tratará los Datos de los Usuarios de manera adecuada y adoptará las medidas de seguridad apropiadas para impedir el acceso, la revelación, alteración o destrucción no autorizados de los Datos. El tratamiento de Datos se realizará mediante ordenadores y/o herramientas informáticas, siguiendo procedimientos y modalidades organizativas estrictamente relacionadas con las finalidades señaladas.</p>
+      <h3>Lugar</h3>
+      <p>Los Datos se tratan en las oficinas del Titular, así como en cualquier otro lugar en el que se encuentren situadas las partes implicadas en dicho proceso de tratamiento. Dependiendo de la localización de los Usuarios, las transferencias de Datos pueden implicar la transferencia de los Datos a otro país diferente al suyo propio.</p>
+      <h3>Período de conservación</h3>
+      <p>Salvo que se indique lo contrario, los Datos Personales serán tratados y conservados durante el tiempo necesario y para la finalidad por la que han sido recogidos y podrán conservarse durante más tiempo debido a una obligación legal pertinente o sobre la base del consentimiento de los Usuarios.</p>
+
+      <h2>4. Finalidad del tratamiento</h2>
+      <p>Los Datos relativos al Usuario son recogidos para permitir al Titular prestar su Servicio, cumplir sus obligaciones legales, responder a solicitudes de ejecución, proteger sus derechos e intereses, detectar cualquier actividad maliciosa o fraudulenta, así como para las siguientes finalidades:</p>
+      <ul>
+        <li>Gestión de pagos</li>
+        <li>Autenticación de usuarios</li>
+        <li>Generación de contenido mediante inteligencia artificial</li>
+        <li>Envío de comunicaciones transaccionales por email</li>
+        <li>Optimización y distribución del tráfico</li>
+        <li>Detección de idioma por geolocalización</li>
+        <li>Visualizar contenidos de plataformas externas</li>
+        <li>Hosting e infraestructura de backend</li>
+      </ul>
+
+      <h2>5. Información detallada del tratamiento</h2>
+      <h3>Gestión de pagos</h3>
+      <p>Esta Aplicación tramita todos los pagos mediante tarjeta de crédito o por cualesquiera otros medios a través de proveedores externos de servicios de pago. Los Usuarios deberán facilitar sus datos de pago directamente a dichos proveedores. Esta Aplicación únicamente recibirá una notificación indicando si el pago se ha realizado correctamente.</p>
+      <p><strong>Stripe</strong> — Stripe Inc, EE.UU.<br>Datos tratados: apellido(s), dirección de correo electrónico, nombre, Datos de uso y Rastreadores.<br><a href="https://stripe.com/privacy" target="_blank" rel="noopener">Política de privacidad de Stripe</a></p>
+      <h3>Autenticación de usuarios</h3>
+      <p>Este servicio permite al Usuario registrarse e iniciar sesión en LibraryPost de forma segura.</p>
+      <p><strong>Clerk</strong> — Clerk Inc, EE.UU.<br>Datos tratados: dirección de correo electrónico, nombre, Datos de uso y Rastreadores.<br><a href="https://clerk.com/privacy" target="_blank" rel="noopener">Política de privacidad de Clerk</a></p>
+      <h3>Generación de contenido mediante inteligencia artificial</h3>
+      <p>Este servicio permite a LibraryPost generar contenido literario y de eventos para Instagram mediante modelos de inteligencia artificial. Los datos introducidos por el usuario (título del libro, autor, editorial, tipo de evento) son procesados por este servicio para generar el contenido solicitado.</p>
+      <p><strong>Google Gemini API</strong> — Google LLC, EE.UU.<br>Datos tratados: contenido introducido por el usuario (títulos, autores, descripciones de eventos), Datos de uso.<br><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de privacidad de Google</a></p>
+      <h3>Envío de comunicaciones por email</h3>
+      <p>Este servicio permite a LibraryPost enviar comunicaciones transaccionales a los usuarios, como confirmaciones de registro, notificaciones de cuenta y comunicaciones del servicio.</p>
+      <p><strong>Resend</strong> — Resend Inc, EE.UU.<br>Datos tratados: dirección de correo electrónico, nombre.<br><a href="https://resend.com/privacy" target="_blank" rel="noopener">Política de privacidad de Resend</a></p>
+      <h3>Hosting e infraestructura de backend</h3>
+      <p>Este servicio tiene como finalidad alojar Datos y archivos que permiten el funcionamiento y distribución de esta Aplicación.</p>
+      <p><strong>Vercel</strong> — Vercel Inc, EE.UU.<br>Datos tratados: Datos de uso, direcciones IP.<br><a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener">Política de privacidad de Vercel</a></p>
+      <h3>Optimización y distribución del tráfico</h3>
+      <p>Este servicio permite a LibraryPost distribuir sus contenidos a través de servidores situados en diversos países y optimizar el rendimiento.</p>
+      <p><strong>Cloudflare</strong> — Cloudflare Inc, EE.UU.<br>Datos tratados: distintas clases de Datos según se especifica en su política de privacidad, Rastreadores.<br><a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Política de privacidad de Cloudflare</a></p>
+      <h3>Detección de idioma por geolocalización</h3>
+      <p>Este servicio permite a LibraryPost detectar el país de origen del Usuario para mostrar la interfaz en el idioma más adecuado. Únicamente se utiliza el código de país derivado de la dirección IP; no se almacena ni se comparte ningún dato adicional.</p>
+      <p><strong>ipapi.co</strong> — Kloudend Inc, EE.UU.<br>Datos tratados: dirección IP, código de país.<br><a href="https://ipapi.co/privacy/" target="_blank" rel="noopener">Política de privacidad de ipapi.co</a></p>
+      <h3>Visualizar contenidos de plataformas externas</h3>
+      <p>Este servicio permite visualizar tipografías alojadas en plataformas externas directamente desde las páginas de esta Aplicación.</p>
+      <p><strong>Google Fonts</strong> — Google Ireland Limited, Irlanda.<br>Datos tratados: Datos de uso, direcciones IP.<br><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de privacidad de Google</a></p>
+
+      <h2>6. Política de Cookies</h2>
+      <p>Esta Aplicación utiliza Rastreadores. Para obtener más información, los Usuarios pueden consultar la <a href="#" onclick="showPage('cookies');return false;">Política de Cookies</a>.</p>
+
+      <h2>7. Más información para usuarios en la Unión Europea</h2>
+      <h3>Base jurídica del Tratamiento</h3>
+      <p>El Titular podrá tratar los Datos Personales del Usuario si se cumple una de las siguientes condiciones:</p>
+      <ul>
+        <li>Cuando los Usuarios hayan dado su consentimiento para una o más finalidades específicas.</li>
+        <li>Cuando la obtención de Datos sea necesaria para el cumplimiento de un contrato con el Usuario.</li>
+        <li>Cuando el tratamiento sea necesario para el cumplimiento de una obligación legal.</li>
+        <li>Cuando el tratamiento esté relacionado con una tarea ejecutada en interés público.</li>
+        <li>Cuando el tratamiento sea necesario con el fin de un interés legítimo perseguido por el Titular o un tercero.</li>
+      </ul>
+      <h3>Derechos de los Usuarios (RGPD)</h3>
+      <p>Los Usuarios tienen derecho a:</p>
+      <ul>
+        <li><strong>Retirar su consentimiento</strong> en cualquier momento.</li>
+        <li><strong>Oponerse al tratamiento</strong> de sus Datos.</li>
+        <li><strong>Acceder a sus Datos</strong> y obtener una copia.</li>
+        <li><strong>Verificar y solicitar la rectificación</strong> de sus Datos.</li>
+        <li><strong>Limitar el tratamiento</strong> de sus Datos.</li>
+        <li><strong>Borrar o eliminar</strong> sus Datos Personales.</li>
+        <li><strong>Recibir sus Datos</strong> en formato portátil.</li>
+        <li><strong>Presentar una reclamación</strong> ante la autoridad competente.</li>
+      </ul>
+      <p>Para ejercer estos derechos, contacte con nosotros en <a href="mailto:hello@librarypost.app">hello@librarypost.app</a>. Responderemos en el plazo máximo de un mes.</p>
+
+      <h2>8. Más información para usuarios en Suiza</h2>
+      <p>Esta sección se aplica a los Usuarios de Suiza y complementa la información contenida en el resto de la política de privacidad, de conformidad con la Ley Federal Suiza de Protección de Datos (FADP).</p>
+      <p>Los Usuarios en Suiza tienen derecho a:</p>
+      <ul>
+        <li>Acceso a sus Datos Personales.</li>
+        <li>Oponerse al tratamiento de sus Datos Personales.</li>
+        <li>Portabilidad de sus Datos Personales.</li>
+        <li>Solicitar la corrección de Datos incorrectos.</li>
+      </ul>
+      <p>Para ejercer estos derechos, contacte con nosotros en <a href="mailto:hello@librarypost.app">hello@librarypost.app</a>.</p>
+
+      <h2>9. Más información para usuarios en Brasil</h2>
+      <p>Esta sección complementa la política de privacidad de conformidad con la Lei Geral de Proteção de Dados (LGPD).</p>
+      <p>Los Usuarios en Brasil tienen derecho a:</p>
+      <ul>
+        <li>Confirmación de la existencia de actividades de tratamiento.</li>
+        <li>Acceso a su información personal.</li>
+        <li>Rectificación de información incompleta, inexacta o desactualizada.</li>
+        <li>Anonimización, bloqueo o supresión de información innecesaria.</li>
+        <li>Portabilidad de su información personal.</li>
+        <li>Eliminación de información tratada con su consentimiento.</li>
+        <li>Revocación del consentimiento en cualquier momento.</li>
+        <li>Presentar una queja ante la ANPD.</li>
+      </ul>
+      <p>Para ejercer estos derechos, contacte con nosotros en <a href="mailto:hello@librarypost.app">hello@librarypost.app</a>.</p>
+
+      <h2>10. Información adicional para usuarios en Estados Unidos</h2>
+      <p>Esta sección es aplicable a todos los Usuarios residentes en California, Virginia, Colorado, Connecticut, Utah, Texas, Oregón, Nevada, Delaware, Iowa, New Hampshire, New Jersey, Nebraska, Tennessee, Minnesota, Maryland, Indiana, Kentucky, Rhode Island y Montana.</p>
+      <h3>Aviso en el momento de la recogida</h3>
+      <p>En los últimos 12 meses hemos recogido las siguientes categorías de Información Personal:</p>
+      <ul>
+        <li><strong>Identificadores:</strong> nombre, apellido(s), dirección de correo electrónico, Datos de uso, Rastreadores.</li>
+        <li><strong>Actividad en redes o dispositivos electrónicos:</strong> Datos de uso, Rastreadores, direcciones IP.</li>
+      </ul>
+      <p>Esta información no se vende ni se comparte para publicidad dirigida.</p>
+      <h3>Sus derechos de privacidad en EE.UU.</h3>
+      <ul>
+        <li>Derecho a acceder a su Información Personal.</li>
+        <li>Derecho a corregir Información Personal inexacta.</li>
+        <li>Derecho a solicitar la eliminación de su Información Personal.</li>
+        <li>Derecho a obtener una copia portable de su Información Personal.</li>
+        <li>Derecho a no ser discriminado por ejercer sus derechos.</li>
+      </ul>
+      <h3>Derechos adicionales para residentes en California</h3>
+      <ul>
+        <li>Derecho a no participar en el intercambio de su Información Personal para publicidad conductual.</li>
+        <li>Derecho a limitar el uso de su Información Personal Sensible.</li>
+      </ul>
+      <h3>Cómo ejercer sus derechos</h3>
+      <p>Envíe su solicitud a <a href="mailto:hello@librarypost.app">hello@librarypost.app</a>. Responderemos en el plazo exigido por la ley aplicable sin cargo alguno.</p>
+
+      <h2>11. Información adicional sobre la recogida de Datos</h2>
+      <h3>Defensa jurídica</h3>
+      <p>Los Datos Personales del Usuario podrán ser utilizados para la defensa jurídica del Titular ante un tribunal o en las fases judiciales previas a un posible pleito.</p>
+      <h3>Log del sistema y mantenimiento</h3>
+      <p>Por motivos de funcionamiento y mantenimiento, esta Aplicación podrá recoger un registro del sistema que puede contener Datos Personales, tales como la dirección IP del Usuario.</p>
+      <h3>Modificación de la presente política</h3>
+      <p>El Titular se reserva el derecho de modificar esta política en cualquier momento. Se recomienda revisar esta página con frecuencia. En caso de cambios que afecten al tratamiento basado en el consentimiento, el Titular obtendrá el nuevo consentimiento del Usuario.</p>
+
+      <h2>12. Definiciones y referencias legales</h2>
+      <dl>
+        <dt><strong>Datos Personales</strong></dt>
+        <dd>Cualquier información que, directa o indirectamente, permita identificar a una persona física.</dd>
+        <dt><strong>Datos de Uso</strong></dt>
+        <dd>Informaciones recogidas automáticamente, como direcciones IP, tipo de navegador, páginas visitadas, tiempo de permanencia y datos del sistema operativo.</dd>
+        <dt><strong>Rastreador</strong></dt>
+        <dd>Cualquier tecnología (cookies, identificadores únicos, balizas web, scripts) que permite rastrear a los Usuarios.</dd>
+        <dt><strong>Cookie</strong></dt>
+        <dd>Rastreadores que consisten en pequeñas cantidades de datos almacenados en el navegador del Usuario.</dd>
+        <dt><strong>Titular</strong></dt>
+        <dd>LibraryPost, Calle Blas de Otero 1, 48014 Bilbao, España. Email: hello@librarypost.app</dd>
+        <dt><strong>Usuario</strong></dt>
+        <dd>El individuo que utilice LibraryPost.</dd>
+        <dt><strong>Unión Europea</strong></dt>
+        <dd>Incluye todos los Estados miembros de la UE y del Espacio Económico Europeo.</dd>
+      </dl>
+      <p><em>Última revisión: 26 mayo 2026</em></p>
+    </div>
     </div>
     <div id="page-terms" class="legal-page" style="display:none;">
-      <div id="terms-content-render"></div>
+      <h1>Términos y Condiciones de LibraryPost</h1>
+      <p>Los presentes Términos y Condiciones regulan el uso de LibraryPost y constituyen un acuerdo vinculante entre el Usuario y el Titular.</p>
+      <p><strong>Última revisión: 26 mayo 2026</strong></p>
+
+      <nav class="legal-toc">
+        <h2>Índice</h2>
+        <ol>
+          <li>Titular</li>
+          <li>Descripción del Servicio</li>
+          <li>Condiciones de uso</li>
+          <li>Registro y cuenta de usuario</li>
+          <li>Planes y pagos</li>
+          <li>Propiedad intelectual</li>
+          <li>Contenido generado por IA</li>
+          <li>Limitación de responsabilidad</li>
+          <li>Suspensión y cancelación</li>
+          <li>Modificaciones del Servicio</li>
+          <li>Ley aplicable</li>
+          <li>Contacto</li>
+        </ol>
+      </nav>
+
+      <h2>1. Titular</h2>
+      <p>LibraryPost<br>Calle Blas de Otero 1, 48014 Bilbao, España<br>Email: <a href="mailto:hello@librarypost.app">hello@librarypost.app</a></p>
+
+      <h2>2. Descripción del Servicio</h2>
+      <p>LibraryPost es una aplicación SaaS (Software as a Service) que permite a librerías independientes generar contenido para Instagram de forma automatizada mediante inteligencia artificial. El Servicio incluye la generación de textos para posts de feed, stories, carruseles y reels, así como la gestión de una biblioteca de títulos y un calendario editorial.</p>
+      <p>El Servicio se presta a través de la plataforma accesible en <a href="https://my.librarypost.app" target="_blank" rel="noopener">my.librarypost.app</a>.</p>
+
+      <h2>3. Condiciones de uso</h2>
+      <p>Al acceder y utilizar LibraryPost, el Usuario acepta los presentes Términos y Condiciones. Si el Usuario no está de acuerdo, deberá abstenerse de utilizar el Servicio.</p>
+      <p>El Usuario se compromete a:</p>
+      <ul>
+        <li>Utilizar el Servicio únicamente para fines lícitos y conforme a la normativa aplicable.</li>
+        <li>No utilizar el Servicio para generar contenido ilegal, fraudulento, difamatorio, obsceno o que vulnere derechos de terceros.</li>
+        <li>No intentar acceder a partes del Servicio para las que no tenga autorización.</li>
+        <li>No reproducir, duplicar, copiar, vender o revender ninguna parte del Servicio sin autorización expresa del Titular.</li>
+        <li>No utilizar herramientas automatizadas para acceder al Servicio de forma masiva sin autorización.</li>
+        <li>Mantener la confidencialidad de sus credenciales de acceso.</li>
+      </ul>
+
+      <h2>4. Registro y cuenta de usuario</h2>
+      <p>Para acceder al Servicio, el Usuario debe registrarse proporcionando una dirección de correo electrónico válida y creando una contraseña segura. El Usuario es responsable de mantener la confidencialidad de sus credenciales.</p>
+      <p>El Titular se reserva el derecho de rechazar el registro o cancelar cuentas que incumplan los presentes Términos.</p>
+      <p>El Usuario puede cancelar su cuenta en cualquier momento contactando con <a href="mailto:hello@librarypost.app">hello@librarypost.app</a>. Tras la cancelación, los datos del Usuario serán eliminados conforme a la Política de Privacidad.</p>
+
+      <h2>5. Planes y pagos</h2>
+      <p>LibraryPost ofrece diferentes planes de suscripción con distintas funcionalidades y límites de uso. Los precios se muestran en la página de precios y pueden estar expresados en euros (EUR) o dólares estadounidenses (USD) según la localización del Usuario.</p>
+      <h3>Prueba gratuita</h3>
+      <p>LibraryPost ofrece 5 generaciones gratuitas sin necesidad de tarjeta de crédito. Al activar un plan de pago, se incluye un período de prueba de 7 días. Durante este período, el Usuario puede cancelar sin cargo alguno.</p>
+      <h3>Facturación</h3>
+      <p>Los planes de pago se facturan mensualmente mediante cargo automático a la tarjeta de crédito o débito proporcionada. El procesamiento de pagos se realiza a través de Stripe. El Titular no almacena datos de tarjetas de pago.</p>
+      <h3>Cancelación</h3>
+      <p>El Usuario puede cancelar su suscripción en cualquier momento desde su panel de cuenta. La cancelación tendrá efecto al final del período de facturación en curso. No se realizan reembolsos por períodos parciales salvo que la ley aplicable lo exija.</p>
+      <h3>Cambios de precio</h3>
+      <p>El Titular se reserva el derecho de modificar los precios de los planes con un preaviso mínimo de 30 días. El Usuario podrá cancelar su suscripción si no está de acuerdo con los nuevos precios.</p>
+
+      <h2>6. Propiedad intelectual</h2>
+      <p>Todos los derechos sobre LibraryPost, incluyendo el código fuente, diseño, logotipos, marcas y documentación, son propiedad exclusiva del Titular o de sus licenciantes.</p>
+      <p>El contenido generado por el Servicio a partir de los datos introducidos por el Usuario es propiedad del Usuario. El Titular no reclamará derechos de propiedad intelectual sobre el contenido generado por el Usuario a través del Servicio.</p>
+      <p>El Usuario conserva todos los derechos sobre el contenido que introduce en el Servicio (títulos, autores, descripciones). Al introducir contenido, el Usuario declara que tiene los derechos necesarios para hacerlo.</p>
+
+      <h2>7. Contenido generado por IA</h2>
+      <p>LibraryPost utiliza modelos de inteligencia artificial para generar contenido literario y de eventos. El Usuario debe tener en cuenta que:</p>
+      <ul>
+        <li>El contenido generado es una sugerencia creativa y puede requerir revisión y edición por parte del Usuario antes de su publicación.</li>
+        <li>El Titular no garantiza que el contenido generado sea factualmente preciso, libre de errores o adecuado para todos los públicos.</li>
+        <li>El Usuario es el único responsable del contenido que publique en redes sociales a partir de las sugerencias del Servicio.</li>
+        <li>El Titular no se hace responsable de reclamaciones de terceros relacionadas con el contenido generado y publicado por el Usuario.</li>
+      </ul>
+
+      <h2>8. Limitación de responsabilidad</h2>
+      <p>En la máxima medida permitida por la ley aplicable, el Titular no será responsable de:</p>
+      <ul>
+        <li>Daños indirectos, incidentales, especiales o consecuentes derivados del uso o la imposibilidad de uso del Servicio.</li>
+        <li>Pérdida de datos, ingresos o beneficios.</li>
+        <li>Interrupciones del Servicio debidas a causas ajenas al control razonable del Titular.</li>
+        <li>Contenido generado por IA que el Usuario publique en redes sociales.</li>
+      </ul>
+      <p>La responsabilidad total del Titular frente al Usuario no superará el importe pagado por el Usuario en los 12 meses anteriores al hecho que da lugar a la reclamación.</p>
+
+      <h2>9. Suspensión y cancelación</h2>
+      <p>El Titular se reserva el derecho de suspender o cancelar el acceso al Servicio de cualquier Usuario que:</p>
+      <ul>
+        <li>Incumpla los presentes Términos y Condiciones.</li>
+        <li>Utilice el Servicio de forma fraudulenta o abusiva.</li>
+        <li>No satisfaga los pagos correspondientes.</li>
+      </ul>
+      <p>En caso de cancelación por incumplimiento, no se realizará reembolso alguno por el período no utilizado.</p>
+
+      <h2>10. Modificaciones del Servicio</h2>
+      <p>El Titular se reserva el derecho de modificar, suspender o interrumpir el Servicio en cualquier momento, con o sin previo aviso. El Titular no será responsable ante el Usuario ni ante terceros por ninguna modificación, suspensión o interrupción del Servicio.</p>
+      <p>Los presentes Términos y Condiciones pueden ser modificados en cualquier momento. El Titular notificará los cambios significativos a los Usuarios registrados por correo electrónico o mediante aviso en la aplicación. El uso continuado del Servicio tras la notificación constituirá la aceptación de los nuevos Términos.</p>
+
+      <h2>11. Ley aplicable y jurisdicción</h2>
+      <p>Los presentes Términos y Condiciones se rigen por la legislación española. Para la resolución de conflictos, las partes se someten a los juzgados y tribunales de Bilbao, España, salvo que la normativa aplicable establezca otro fuero imperativo.</p>
+      <p>Para usuarios en la Unión Europea, lo anterior no afecta a los derechos que correspondan al consumidor según la normativa imperativa del país de residencia del Usuario.</p>
+      <p>Para usuarios en Estados Unidos, los conflictos se resolverán mediante arbitraje vinculante conforme a las reglas de la American Arbitration Association, salvo que el Usuario opte por excluirse de dicho arbitraje notificándolo al Titular en el plazo de 30 días desde la aceptación de los presentes Términos.</p>
+
+      <h2>12. Contacto</h2>
+      <p>Para cualquier consulta sobre los presentes Términos y Condiciones, puede contactar con nosotros en:</p>
+      <p>LibraryPost<br>Calle Blas de Otero 1, 48014 Bilbao, España<br>Email: <a href="mailto:hello@librarypost.app">hello@librarypost.app</a></p>
+      <p><em>Última revisión: 26 mayo 2026</em></p>
+    </div>
     </div>
     <div id="page-cookies" class="legal-page" style="display:none;">
-      <div id="cookies-content-render"></div>
+      <h1>Política de Cookies de LibraryPost</h1>
+      <p>El presente documento informa a los Usuarios sobre las tecnologías que utiliza LibraryPost para los fines descritos a continuación. Estas tecnologías permiten al Titular acceder a información y almacenarla en el dispositivo del Usuario mientras este interactúa con LibraryPost.</p>
+      <p><strong>Última revisión: 26 mayo 2026</strong></p>
+
+      <h2>Cómo LibraryPost utiliza Rastreadores</h2>
+      <h3>Rastreadores necesarios</h3>
+      <p>LibraryPost utiliza Rastreadores técnicos estrictamente necesarios para el funcionamiento o la prestación del Servicio. No requieren consentimiento del Usuario.</p>
+
+      <h4>Clerk (autenticación)</h4>
+      <p>Clerk es el servicio de autenticación de LibraryPost. Gestiona el inicio de sesión, registro y sesiones de usuario de forma segura.</p>
+      <p>Empresa: Clerk Inc — EE.UU.<br>Datos tratados: dirección de correo electrónico, nombre, Datos de uso, Rastreadores.<br><a href="https://clerk.com/privacy" target="_blank" rel="noopener">Política de privacidad</a></p>
+      <table class="legal-table">
+        <thead><tr><th>Cookie</th><th>Duración</th><th>Finalidad</th></tr></thead>
+        <tbody>
+          <tr><td>__session</td><td>Sesión</td><td>Gestión de sesión autenticada</td></tr>
+          <tr><td>__client_uat</td><td>Indefinida</td><td>Seguimiento de actividad del cliente</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Stripe (pagos)</h4>
+      <p>Stripe es el servicio de pagos de LibraryPost.</p>
+      <p>Empresa: Stripe Inc — EE.UU.<br>Datos tratados: apellido(s), dirección de correo electrónico, nombre, Datos de uso, Rastreadores.<br><a href="https://stripe.com/privacy" target="_blank" rel="noopener">Política de privacidad</a></p>
+      <table class="legal-table">
+        <thead><tr><th>Cookie</th><th>Duración</th><th>Finalidad</th></tr></thead>
+        <tbody>
+          <tr><td>__stripe_mid</td><td>1 año</td><td>Prevención de fraude</td></tr>
+          <tr><td>__stripe_sid</td><td>30 minutos</td><td>Gestión de sesión de pago</td></tr>
+          <tr><td>__Host-LinkSession</td><td>2 años</td><td>Sesión de Stripe Link</td></tr>
+          <tr><td>m</td><td>2 años</td><td>Identificador de dispositivo</td></tr>
+          <tr><td>pay_sid</td><td>1 año</td><td>Sesión de pago</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Cloudflare (seguridad y rendimiento)</h4>
+      <p>Cloudflare filtra el tráfico de LibraryPost para optimizar el rendimiento y proteger contra ataques.</p>
+      <p>Empresa: Cloudflare Inc — EE.UU.<br>Datos tratados: distintas clases de Datos según su política de privacidad, Rastreadores.<br><a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Política de privacidad</a></p>
+      <table class="legal-table">
+        <thead><tr><th>Cookie</th><th>Duración</th><th>Finalidad</th></tr></thead>
+        <tbody>
+          <tr><td>_cfuvid</td><td>Indefinida</td><td>Identificador de usuario Cloudflare</td></tr>
+          <tr><td>cf_clearance</td><td>30 minutos</td><td>Verificación de seguridad</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Vercel Analytics (métricas)</h4>
+      <p>Vercel Analytics permite a LibraryPost medir el tráfico y el rendimiento de la aplicación de forma anónima.</p>
+      <p>Empresa: Vercel Inc — EE.UU.<br>Datos tratados: Datos de uso, direcciones IP anonimizadas.<br><a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener">Política de privacidad</a></p>
+      <table class="legal-table">
+        <thead><tr><th>Cookie</th><th>Duración</th><th>Finalidad</th></tr></thead>
+        <tbody>
+          <tr><td>_vercel_analytics</td><td>Sesión</td><td>Métricas de tráfico anónimas</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Rastreadores de experiencia</h3>
+      <p>Estos Rastreadores mejoran la calidad de la experiencia del usuario y permiten la interacción con contenidos externos.</p>
+
+      <h4>Google Fonts (tipografías)</h4>
+      <p>Google Fonts permite a LibraryPost mostrar tipografías profesionales alojadas en servidores de Google.</p>
+      <p>Empresa: Google Ireland Limited — Irlanda.<br>Datos tratados: Datos de uso, dirección IP.<br><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de privacidad</a></p>
+
+      <h4>ipapi.co (detección de idioma)</h4>
+      <p>ipapi.co permite a LibraryPost detectar el país de origen del Usuario para mostrar la interfaz en el idioma más adecuado. Únicamente se utiliza el código de país; no se almacena ningún dato adicional.</p>
+      <p>Empresa: Kloudend Inc — EE.UU.<br>Datos tratados: dirección IP, código de país.<br><a href="https://ipapi.co/privacy/" target="_blank" rel="noopener">Política de privacidad</a></p>
+
+      <h3>Rastreadores de medición</h3>
+      <p>Estos Rastreadores ayudan a medir el tráfico y analizar el comportamiento de los usuarios para mejorar el servicio.</p>
+
+      <h4>Google Gemini API (generación de contenido)</h4>
+      <p>Google Gemini API procesa el contenido introducido por el usuario (títulos de libros, autores, descripciones de eventos) para generar publicaciones de Instagram. Los datos son procesados en servidores de Google y no se utilizan para entrenar modelos según los términos de uso de la API.</p>
+      <p>Empresa: Google LLC — EE.UU.<br>Datos tratados: contenido introducido por el usuario, Datos de uso.<br><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de privacidad</a></p>
+
+      <h2>Cómo gestionar las preferencias en LibraryPost</h2>
+      <p>Los Usuarios pueden establecer o actualizar sus preferencias a través del panel de privacidad disponible en LibraryPost al cargar la página.</p>
+      <p>Para los Rastreadores de terceros, los Usuarios podrán gestionar sus preferencias contactando directamente con el tercero correspondiente o consultando su política de privacidad.</p>
+
+      <h2>Cómo controlar o borrar Cookies</h2>
+      <p>Los Usuarios pueden emplear la configuración de su navegador para ver, bloquear o eliminar Cookies. Información disponible en:</p>
+      <ul>
+        <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener">Google Chrome</a></li>
+        <li><a href="https://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-sitios-web-rastrear-preferencias" target="_blank" rel="noopener">Mozilla Firefox</a></li>
+        <li><a href="https://support.apple.com/es-es/guide/safari/sfri11471/mac" target="_blank" rel="noopener">Apple Safari</a></li>
+        <li><a href="https://support.microsoft.com/es-es/windows/eliminar-y-administrar-cookies-168dab11-0753-043d-7c16-ede5947fc64d" target="_blank" rel="noopener">Microsoft Edge</a></li>
+      </ul>
+
+      <h2>Consecuencias de no permitir Rastreadores</h2>
+      <p>Los Usuarios pueden decidir libremente si permitir o no el uso de Rastreadores. Sin embargo, los Rastreadores necesarios son imprescindibles para el funcionamiento del servicio (autenticación y pagos). Si el Usuario bloquea estos Rastreadores, es posible que no pueda acceder a LibraryPost ni realizar pagos.</p>
+
+      <h2>Titular y Responsable de Tratamiento</h2>
+      <p>LibraryPost<br>Calle Blas de Otero 1, 48014 Bilbao, España<br>Email: <a href="mailto:hello@librarypost.app">hello@librarypost.app</a></p>
+
+      <h2>Definiciones</h2>
+      <dl>
+        <dt><strong>Cookie</strong></dt>
+        <dd>Rastreadores que consisten en pequeñas cantidades de datos almacenados en el navegador del Usuario.</dd>
+        <dt><strong>Rastreador</strong></dt>
+        <dd>Cualquier tecnología (cookies, identificadores únicos, balizas web, scripts) que permite rastrear a los Usuarios.</dd>
+        <dt><strong>Datos de Uso</strong></dt>
+        <dd>Informaciones recogidas automáticamente, como direcciones IP, tipo de navegador y páginas visitadas.</dd>
+      </dl>
+      <p><em>Última revisión: 26 mayo 2026</em></p>
+    </div>
     </div>
   </div>
 </div>
@@ -2271,7 +2666,7 @@ function detectLang(cc){const sv=localStorage.getItem('lpLang');if(sv&&LP_SUPPOR
 function setLang(l){localStorage.setItem('lpLang',l);applyLang(l);const btn=document.getElementById('ft-lang-btn');const dd=document.getElementById('ftLangDropdown');if(dd)dd.classList.remove('open');if(btn)btn.setAttribute('aria-expanded','false');}
 function toggleFtLang(){const btn=document.getElementById('ft-lang-btn');const dd=document.getElementById('ftLangDropdown');dd.classList.toggle('open');btn.setAttribute('aria-expanded',dd.classList.contains('open')?'true':'false');}
 document.addEventListener('click',function(e){if(!e.target.closest('.ft-ls')){const btn=document.getElementById('ft-lang-btn');const dd=document.getElementById('ftLangDropdown');if(dd)dd.classList.remove('open');if(btn)btn.setAttribute('aria-expanded','false');}});
-function showPage(p){document.getElementById('main-content').style.display='none';document.getElementById('legal-pages').style.display='block';['privacy','terms','cookies'].forEach(x=>document.getElementById('page-'+x).style.display='none');document.getElementById('page-'+p).style.display='block';if(p==='privacy'){const l=localStorage.getItem('lpLang')||'es';renderPrivacy(l);}if(p==='terms'){const l=localStorage.getItem('lpLang')||'es';renderTerms(l);}if(p==='cookies'){const l=localStorage.getItem('lpLang')||'es';renderCookies(l);}window.scrollTo(0,0);}
+function showPage(p){document.getElementById('main-content').style.display='none';document.getElementById('legal-pages').style.display='block';['privacy','terms','cookies'].forEach(x=>document.getElementById('page-'+x).style.display='none');document.getElementById('page-'+p).style.display='block';window.scrollTo(0,0);}
 function showMain(){document.getElementById('legal-pages').style.display='none';document.getElementById('main-content').style.display='block';window.scrollTo(0,0);}
 function toggleFaq(btn){const item=btn.closest('.faq-item');const expanded=btn.getAttribute('aria-expanded')==='true';btn.setAttribute('aria-expanded',String(!expanded));btn.querySelector('.faq-icon').textContent=expanded?'+':'−';item.classList.toggle('collapsed',expanded);}
 const CK_KEY='lp-cookie-consent';
