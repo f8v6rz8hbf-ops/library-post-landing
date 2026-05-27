@@ -178,7 +178,9 @@
     .ipad-spinner{animation:ipadSpinOp 30s infinite;}
     .ipad-spinner-disc{animation:ipadSpin 1.2s linear infinite;}
     @keyframes ipadScroll{0%,38%{transform:translateY(0);animation-timing-function:ease-in-out;}50%{transform:translateY(-55%);animation-timing-function:steps(1,end);}50.1%,100%{transform:translateY(0);}}
+    @keyframes ipadZoom{0%,27%{transform:scale(1);animation-timing-function:cubic-bezier(.4,0,.2,1)}33%{transform:scale(1.42);animation-timing-function:cubic-bezier(.4,0,.2,1)}42%{transform:scale(1.42);animation-timing-function:cubic-bezier(.4,0,.2,1)}48%,100%{transform:scale(1)}}
     .ipad-result-wrap{height:100%;overflow:hidden;}
+    .ipad-zoom-wrap{transform-origin:50% 16%;animation:ipadZoom 30s infinite;}
     .ipad-result-inner{padding:8px 10px;animation:ipadScroll 30s infinite;}
     .ipad-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:6px;}
     .ipad-empty-icon{width:28px;height:28px;border:1.5px solid rgba(31,27,22,.2);border-radius:3px;display:flex;align-items:center;justify-content:center;}
@@ -224,7 +226,7 @@
       .ft-lb{font-size:.75rem;}
     }
     @media(prefers-reduced-motion:reduce){
-      .ipad-f1,.ipad-f2,.ipad-f3,.ipad-f4,.ipad-btn-gen,.ipad-spinner,.ipad-result-inner{animation:none;}
+      .ipad-f1,.ipad-f2,.ipad-f3,.ipad-f4,.ipad-btn-gen,.ipad-spinner,.ipad-result-inner,.ipad-zoom-wrap{animation:none;}
       .ipad-f1{opacity:1;}
       .ipad-f2{opacity:0;}
       .ipad-f3{opacity:0;}
@@ -420,7 +422,9 @@
                 </div>
                 <div class="ipad-right">
                   <div class="ipad-result-wrap">
-                    <div class="ipad-result-inner" id="ipad-result-inner">
+                    <div class="ipad-zoom-wrap">
+                      <div class="ipad-result-inner" id="ipad-result-inner">
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -2470,7 +2474,7 @@ if(playBtn){
   playBtn.addEventListener('click',function(){
     ipadAnimationPlaying=!ipadAnimationPlaying;
     var st=ipadAnimationPlaying?'running':'paused';
-    document.querySelectorAll('.ipad-f1,.ipad-f2,.ipad-f3,.ipad-f4,.ipad-btn-gen,.ipad-spinner,.ipad-result-inner').forEach(function(el){el.style.animationPlayState=st;});
+    document.querySelectorAll('.ipad-f1,.ipad-f2,.ipad-f3,.ipad-f4,.ipad-btn-gen,.ipad-spinner,.ipad-result-inner,.ipad-zoom-wrap').forEach(function(el){el.style.animationPlayState=st;});
     iconPause.style.display=ipadAnimationPlaying?'':'none';
     iconPlay.style.display=ipadAnimationPlaying?'none':'';
     playBtn.setAttribute('aria-label',ipadAnimationPlaying?'Pause':'Play');
