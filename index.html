@@ -1825,6 +1825,8 @@ es:{
 h1:'Política de Cookies de LibraryPost',
 intro:'El presente documento informa a los Usuarios sobre las tecnologías que utiliza LibraryPost para los fines descritos a continuación.',
 rev:'Última revisión: 26 mayo 2026',
+toc_h:'Índice',
+toc:['Cómo LibraryPost utiliza Rastreadores','Cómo gestionar las preferencias en LibraryPost','Cómo controlar o borrar Cookies','Consecuencias de no permitir Rastreadores','Titular y Responsable de Tratamiento','Definiciones'],
 h_necessary:'Rastreadores necesarios',
 p_necessary:'LibraryPost utiliza Rastreadores técnicos estrictamente necesarios para el funcionamiento o la prestación del Servicio. No requieren consentimiento del Usuario.',
 h_how:'Cómo LibraryPost utiliza Rastreadores',
@@ -1883,6 +1885,8 @@ en:{
 h1:'LibraryPost Cookie Policy',
 intro:'This document informs Users about the technologies used by LibraryPost for the purposes described below.',
 rev:'Last updated: 26 May 2026',
+toc_h:'Table of Contents',
+toc:['How LibraryPost uses Trackers','How to manage preferences in LibraryPost','How to control or delete Cookies','Consequences of not allowing Trackers','Data Controller','Definitions'],
 h_necessary:'Necessary Trackers',
 p_necessary:'LibraryPost uses strictly necessary technical Trackers for the functioning or provision of the Service. They do not require User consent.',
 h_how:'How LibraryPost uses Trackers',
@@ -1941,6 +1945,8 @@ pt:{
 h1:'Política de Cookies da LibraryPost',
 intro:'O presente documento informa os Utilizadores sobre as tecnologias utilizadas pela LibraryPost para os fins descritos abaixo.',
 rev:'Última revisão: 26 de maio de 2026',
+toc_h:'Índice',
+toc:['Como a LibraryPost utiliza Rastreadores','Como gerir as preferências na LibraryPost','Como controlar ou eliminar Cookies','Consequências de não permitir Rastreadores','Responsável pelo Tratamento','Definições'],
 h_necessary:'Rastreadores necessários',
 p_necessary:'A LibraryPost utiliza Rastreadores técnicos estritamente necessários para o funcionamento ou a prestação do Serviço. Não requerem consentimento do Utilizador.',
 h_how:'Como a LibraryPost utiliza Rastreadores',
@@ -1999,6 +2005,8 @@ fr:{
 h1:'Politique en matière de Cookies de LibraryPost',
 intro:'Le présent document informe les Utilisateurs sur les technologies utilisées par LibraryPost aux fins décrites ci-dessous.',
 rev:'Dernière révision : 26 mai 2026',
+toc_h:'Table des matières',
+toc:['Comment LibraryPost utilise les Traceurs','Gestion des préférences dans LibraryPost','Comment contrôler ou supprimer les Cookies','Conséquences du refus des Traceurs','Responsable du traitement','Définitions'],
 h_necessary:'Traceurs nécessaires',
 p_necessary:'LibraryPost utilise des Traceurs techniques strictement nécessaires au fonctionnement ou à la fourniture du Service. Ils ne nécessitent pas le consentement de l\'Utilisateur.',
 h_how:'Comment LibraryPost utilise les Traceurs',
@@ -2057,6 +2065,8 @@ de:{
 h1:'Cookie-Richtlinie von LibraryPost',
 intro:'Dieses Dokument informiert Nutzer über die von LibraryPost zu den unten beschriebenen Zwecken verwendeten Technologien.',
 rev:'Letzte Aktualisierung: 26. Mai 2026',
+toc_h:'Inhaltsverzeichnis',
+toc:['Wie LibraryPost Tracker verwendet','Verwaltung von Einstellungen in LibraryPost','Cookies kontrollieren oder löschen','Folgen des Nicht-Zulassens von Trackern','Verantwortlicher','Definitionen'],
 h_necessary:'Notwendige Tracker',
 p_necessary:'LibraryPost verwendet technisch notwendige Tracker, die für den Betrieb oder die Bereitstellung des Dienstes unbedingt erforderlich sind. Sie bedürfen keiner Einwilligung des Nutzers.',
 h_how:'Wie LibraryPost Tracker verwendet',
@@ -2115,6 +2125,8 @@ it:{
 h1:'Politica sui Cookie di LibraryPost',
 intro:'Il presente documento informa gli Utenti sulle tecnologie utilizzate da LibraryPost per le finalità descritte di seguito.',
 rev:'Ultima revisione: 26 maggio 2026',
+toc_h:'Indice',
+toc:['Come LibraryPost utilizza i Tracker','Come gestire le preferenze in LibraryPost','Come controllare o eliminare i Cookie','Conseguenze del mancato consenso ai Tracker','Titolare del trattamento','Definizioni'],
 h_necessary:'Tracker necessari',
 p_necessary:'LibraryPost utilizza Tracker tecnici strettamente necessari per il funzionamento o la fornitura del Servizio. Non richiedono il consenso dell\'Utente.',
 h_how:'Come LibraryPost utilizza i Tracker',
@@ -2173,6 +2185,8 @@ nl:{
 h1:'Cookiebeleid van LibraryPost',
 intro:'Dit document informeert Gebruikers over de technologieën die LibraryPost gebruikt voor de hieronder beschreven doeleinden.',
 rev:'Laatste revisie: 26 mei 2026',
+toc_h:'Inhoudsopgave',
+toc:['Hoe LibraryPost Trackers gebruikt','Voorkeuren beheren in LibraryPost','Cookies beheren of verwijderen','Gevolgen van het niet toestaan van Trackers','Verwerkingsverantwoordelijke','Definities'],
 h_necessary:'Noodzakelijke Trackers',
 p_necessary:'LibraryPost gebruikt strikt noodzakelijke technische Trackers voor het functioneren of de levering van de Dienst. Ze vereisen geen toestemming van de Gebruiker.',
 h_how:'Hoe LibraryPost Trackers gebruikt',
@@ -2340,9 +2354,11 @@ function renderCookies(lang){
       +'</tbody></table>';
   }
   var defs='<dl>'+c.defs.map(function(d){return '<dt><strong>'+d[0]+'</strong></dt><dd>'+d[1]+'</dd>';}).join('')+'</dl>';
+  var toc='<ol>'+c.toc.map(function(t,i){return '<li>'+(i+1)+'. '+t+'</li>';}).join('')+'</ol>';
   var h='<h1>'+c.h1+'</h1>'
     +'<p>'+c.intro+'</p>'
     +'<p><strong>'+c.rev+'</strong></p>'
+    +'<nav class="legal-toc"><h2>'+c.toc_h+'</h2>'+toc+'</nav>'
     +'<h2>'+c.h_how+'</h2>'
     +'<h3>'+c.h_necessary+'</h3>'
     +'<p>'+c.p_necessary+'</p>'
