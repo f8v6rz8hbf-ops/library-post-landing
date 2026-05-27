@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "LibraryPost Landing",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "8080", "--directory", "/Users/joseba/library-post-landing-v2"],
+      "port": 8080
+    },
+    {
+      "name": "LibraryPost App",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": ["-c", "cd /Users/joseba/LibraryContentCreator-app && yarn dev"],
+      "port": 3000
+    }
+  ]
+}
