@@ -2230,6 +2230,7 @@ vercel_cookies:[['_vercel_analytics','Sessie','Anonieme verkeersstatistieken']]
 };
 function renderPrivacy(lang){
   var c=legalPrivacy[lang]||legalPrivacy['es'];
+  var pl=(legalCookies[lang]||legalCookies['es']).privacy_link;
   var toc='<ol>'+c.toc.map(function(t,i){return '<li>'+(i+1)+'. '+t+'</li>';}).join('')+'</ol>';
   var s4li='<ul>'+c.s4list.map(function(x){return '<li>'+x+'</li>';}).join('')+'</ul>';
   var s7basis='<ul>'+c.s7basis.map(function(x){return '<li>'+x+'</li>';}).join('')+'</ul>';
@@ -2255,21 +2256,21 @@ function renderPrivacy(lang){
     +'<p>'+c.s4p+'</p>'+s4li
     +'<h2>'+c.s5h+'</h2>'
     +'<h3>'+c.s5_pay_h+'</h3><p>'+c.s5_pay_p+'</p>'
-    +'<p><strong>Stripe</strong> — Stripe Inc, USA.<br>'+c.s5_data+' '+c.s5_stripe_data+'<br><a href="https://stripe.com/privacy" target="_blank" rel="noopener">'+c.privacy_link||'Privacy Policy'+'</a></p>'
+    +'<p><strong>Stripe</strong> — Stripe Inc, USA.<br>'+c.s5_data+' '+c.s5_stripe_data+'<br><a href="https://stripe.com/privacy" target="_blank" rel="noopener">'+pl+'</a></p>'
     +'<h3>'+c.s5_auth_h+'</h3><p>'+c.s5_auth_p+'</p>'
-    +'<p><strong>Clerk</strong> — Clerk Inc, USA.<br>'+c.s5_data+' '+c.s5_clerk_data+'<br><a href="https://clerk.com/privacy" target="_blank" rel="noopener">'+c.privacy_link||'Privacy Policy'+'</a></p>'
+    +'<p><strong>Clerk</strong> — Clerk Inc, USA.<br>'+c.s5_data+' '+c.s5_clerk_data+'<br><a href="https://clerk.com/privacy" target="_blank" rel="noopener">'+pl+'</a></p>'
     +'<h3>'+c.s5_ai_h+'</h3><p>'+c.s5_ai_p+'</p>'
-    +'<p><strong>Google Gemini API</strong> — Google LLC, USA.<br>'+c.s5_data+' '+c.s5_gemini_data+'<br><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">'+c.privacy_link||'Privacy Policy'+'</a></p>'
+    +'<p><strong>Google Gemini API</strong> — Google LLC, USA.<br>'+c.s5_data+' '+c.s5_gemini_data+'<br><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">'+pl+'</a></p>'
     +'<h3>'+c.s5_email_h+'</h3><p>'+c.s5_email_p+'</p>'
-    +'<p><strong>Resend</strong> — Resend Inc, USA.<br>'+c.s5_data+' '+c.s5_resend_data+'<br><a href="https://resend.com/privacy" target="_blank" rel="noopener">'+c.privacy_link||'Privacy Policy'+'</a></p>'
+    +'<p><strong>Resend</strong> — Resend Inc, USA.<br>'+c.s5_data+' '+c.s5_resend_data+'<br><a href="https://resend.com/privacy" target="_blank" rel="noopener">'+pl+'</a></p>'
     +'<h3>'+c.s5_host_h+'</h3><p>'+c.s5_host_p+'</p>'
-    +'<p><strong>Vercel</strong> — Vercel Inc, USA.<br>'+c.s5_data+' '+c.s5_vercel_data+'<br><a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener">'+c.privacy_link||'Privacy Policy'+'</a></p>'
+    +'<p><strong>Vercel</strong> — Vercel Inc, USA.<br>'+c.s5_data+' '+c.s5_vercel_data+'<br><a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener">'+pl+'</a></p>'
     +'<h3>'+c.s5_cdn_h+'</h3><p>'+c.s5_cdn_p+'</p>'
-    +'<p><strong>Cloudflare</strong> — Cloudflare Inc, USA.<br>'+c.s5_data+' '+c.s5_cf_data+'<br><a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">'+c.privacy_link||'Privacy Policy'+'</a></p>'
+    +'<p><strong>Cloudflare</strong> — Cloudflare Inc, USA.<br>'+c.s5_data+' '+c.s5_cf_data+'<br><a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">'+pl+'</a></p>'
     +'<h3>'+c.s5_geo_h+'</h3><p>'+c.s5_geo_p+'</p>'
-    +'<p><strong>ipapi.co</strong> — Kloudend Inc, USA.<br>'+c.s5_data+' '+c.s5_geo_data+'<br><a href="https://ipapi.co/privacy/" target="_blank" rel="noopener">'+c.privacy_link||'Privacy Policy'+'</a></p>'
+    +'<p><strong>ipapi.co</strong> — Kloudend Inc, USA.<br>'+c.s5_data+' '+c.s5_geo_data+'<br><a href="https://ipapi.co/privacy/" target="_blank" rel="noopener">'+pl+'</a></p>'
     +'<h3>'+c.s5_fonts_h+'</h3><p>'+c.s5_fonts_p+'</p>'
-    +'<p><strong>Google Fonts</strong> — '+c.s5_fonts_company+'<br>'+c.s5_data+' '+c.s5_fonts_data+'<br><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">'+c.privacy_link||'Privacy Policy'+'</a></p>'
+    +'<p><strong>Google Fonts</strong> — '+c.s5_fonts_company+'<br>'+c.s5_data+' '+c.s5_fonts_data+'<br><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">'+pl+'</a></p>'
     +'<h2>'+c.s6h+'</h2>'
     +'<p>'+c.s6p+' <a href="#" onclick="showPage(\'cookies\');return false;">'+c.s6link+'</a>.</p>'
     +'<h2>'+c.s7h+'</h2>'
