@@ -282,12 +282,22 @@
       .ft-lb{font-size:.75rem;}
     }
     @media(max-width:480px){
-      .ipad-f4{padding:8px;}
-      .ipad-cal-day{padding:0;font-size:.3rem;min-height:16px;border:none;}
-      .ipad-cal-day-num{font-size:.3rem;}
-      .ipad-cal-event{font-size:.25rem;padding:0 1px;}
-      .ipad-cal-weekday{font-size:.3rem;padding:0;}
-      .ipad-cal-legend{font-size:.35rem;gap:4px;}
+      /* Reset all calendar size overrides — JS transform:scale() handles proportions */
+      .ipad-cal-header h2{font-size:.75rem;}
+      .ipad-cal-header p{font-size:.6rem;}
+      .ipad-cal-weekday{font-size:.45rem;padding:2px 0;}
+      .ipad-cal-weekdays{gap:1px;}
+      .ipad-cal-day{padding:2px;font-size:.45rem;min-height:24px;border:1px solid var(--line);}
+      .ipad-cal-days{gap:1px;}
+      .ipad-cal-day-num{font-size:.45rem;}
+      .ipad-cal-event{font-size:.38rem;padding:1px 2px;}
+      .ipad-cal-legend{font-size:.5rem;gap:8px;margin-top:6px;}
+      .ipad-f4{padding:16px;}
+      /* Scale container: clips overflow while bezel renders at natural size */
+      .ipad-wrap{overflow:hidden;}
+      .ipad-bezel{flex-shrink:0;}
+      /* Hide external play button — it falls outside scaled area on mobile */
+      .ipad-play-btn{display:none;}
     }
     @media(prefers-reduced-motion:reduce){
       .ipad-f1,.ipad-f2,.ipad-f3,.ipad-f4,.ipad-btn-gen,.ipad-spinner,.ipad-result-inner{animation:none;}
@@ -2543,6 +2553,28 @@ if(playBtn){
   });
 }
 initCookies();
+/* Scale iPad mockup to fit mobile screens — renders at 680px then scales to container */
+function scaleIpadMockup(){
+  var bezel=document.querySelector('.ipad-bezel');
+  var wrap=document.querySelector('.ipad-wrap');
+  if(!bezel||!wrap)return;
+  if(window.innerWidth>480){
+    bezel.style.width='';bezel.style.maxWidth='';bezel.style.maxHeight='';
+    bezel.style.transform='';bezel.style.transformOrigin='';
+    wrap.style.height='';
+    return;
+  }
+  var NW=680,NH=510,aw=wrap.clientWidth,scale=aw/NW;
+  bezel.style.width=NW+'px';
+  bezel.style.maxWidth='none';
+  bezel.style.maxHeight='none';
+  bezel.style.transformOrigin='top center';
+  bezel.style.transform='scale('+scale.toFixed(4)+')';
+  wrap.style.height=(NH*scale).toFixed(0)+'px';
+}
+scaleIpadMockup();
+window.addEventListener('resize',scaleIpadMockup);
+window.addEventListener('load',scaleIpadMockup);
 </script>
 
 <script type="application/ld+json">
