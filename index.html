@@ -230,8 +230,8 @@
       .ipad-f3{opacity:0;}
       .ipad-f4{opacity:0;}
     }
-    .ipad-play-btn{position:absolute;bottom:12px;right:12px;width:36px;height:36px;border-radius:50%;background:var(--accent);color:var(--cream);border:none;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;z-index:10;transition:background 200ms;}
-    .ipad-play-btn:hover{background:#6a4620;}
+    .ipad-play-btn{position:absolute;right:-18px;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;background:var(--paper);border:1px solid var(--line);box-shadow:0 2px 8px rgba(31,27,22,.10);color:var(--muted);cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:20;transition:color 150ms,box-shadow 150ms;}
+    .ipad-play-btn:hover{color:var(--ink);box-shadow:0 4px 14px rgba(31,27,22,.18);}
     .ipad-f3{padding:16px;overflow:hidden;display:flex;flex-direction:column;}
     .ipad-lib-header{margin-bottom:8px;}
     .ipad-lib-tabs{display:flex;gap:4px;margin-bottom:8px;border-bottom:1px solid var(--line);}
@@ -461,7 +461,10 @@
               </div>
             </div>
           </div>
-          <button class="ipad-play-btn" id="ipad-play-btn" aria-label="Play/Pause">⏸</button>
+          <button class="ipad-play-btn" id="ipad-play-btn" aria-label="Pause">
+            <svg id="ipad-icon-pause" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="5" y="3" width="4" height="18" rx="1"/><rect x="15" y="3" width="4" height="18" rx="1"/></svg>
+            <svg id="ipad-icon-play" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:none;margin-left:1px;"><path d="M6 4.5 20 12 6 19.5V4.5Z"/></svg>
+          </button>
         </div>
       </div>
       <div style="text-align:center;margin-top:3rem;">
@@ -2461,7 +2464,18 @@ new IntersectionObserver(([e])=>{const p=!e.isIntersecting;_navBtns.forEach(b=>{
 fetch('https://ipapi.co/json/').then(r=>r.json()).then(d=>{applyLang(detectLang(d.country_code));}).catch(()=>applyLang(detectLang(null)));
 let ipadAnimationPlaying=true;
 const playBtn=document.getElementById('ipad-play-btn');
-if(playBtn){playBtn.addEventListener('click',function(){ipadAnimationPlaying=!ipadAnimationPlaying;const st=ipadAnimationPlaying?'running':'paused';document.querySelectorAll('.ipad-f1,.ipad-f2,.ipad-f3,.ipad-f4,.ipad-btn-gen,.ipad-spinner,.ipad-result-inner').forEach(function(el){el.style.animationPlayState=st;});playBtn.textContent=ipadAnimationPlaying?'⏸':'▶';});}
+if(playBtn){
+  var iconPause=document.getElementById('ipad-icon-pause');
+  var iconPlay=document.getElementById('ipad-icon-play');
+  playBtn.addEventListener('click',function(){
+    ipadAnimationPlaying=!ipadAnimationPlaying;
+    var st=ipadAnimationPlaying?'running':'paused';
+    document.querySelectorAll('.ipad-f1,.ipad-f2,.ipad-f3,.ipad-f4,.ipad-btn-gen,.ipad-spinner,.ipad-result-inner').forEach(function(el){el.style.animationPlayState=st;});
+    iconPause.style.display=ipadAnimationPlaying?'':'none';
+    iconPlay.style.display=ipadAnimationPlaying?'none':'';
+    playBtn.setAttribute('aria-label',ipadAnimationPlaying?'Pause':'Play');
+  });
+}
 initCookies();
 </script>
 </body>
