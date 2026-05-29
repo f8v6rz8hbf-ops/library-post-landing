@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /admin/
 
-Sitemap: https://library-post-landing.vercel.app/sitemap.xml
+Sitemap: https://librarypost.app/sitemap.xml
