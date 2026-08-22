@@ -2675,6 +2675,7 @@ function scaleIpadMockup(){
 scaleIpadMockup();
 window.addEventListener('resize',scaleIpadMockup);
 window.addEventListener('load',scaleIpadMockup);
+(function(){var lp=new URLSearchParams(location.search).get('legal');if(lp&&['terms','privacy','cookies'].includes(lp)){window.addEventListener('load',function(){showPage(lp);});}})();
 </script>
 
 <script type="application/ld+json">
