@@ -2395,7 +2395,7 @@ vercel_cookies:[['_vercel_analytics','Sessie','Anonieme verkeersstatistieken']]
 function renderPrivacy(lang){
   var c=legalPrivacy[lang]||legalPrivacy['es'];
   var pl=(legalCookies[lang]||legalCookies['es']).privacy_link;
-  var toc='<ol>'+c.toc.map(function(t,i){return '<li>'+(i+1)+'. '+t+'</li>';}).join('')+'</ol>';
+  var toc='<ol>'+c.toc.map(function(t,i){return '<li>'+t+'</li>';}).join('')+'</ol>';
   var s4li='<ul>'+c.s4list.map(function(x){return '<li>'+x+'</li>';}).join('')+'</ul>';
   var s7basis='<ul>'+c.s7basis.map(function(x){return '<li>'+x+'</li>';}).join('')+'</ul>';
   var s7rights='<ul>'+c.s7rights.map(function(x){return '<li>'+x+'</li>';}).join('')+'</ul>';
@@ -2467,7 +2467,7 @@ function renderPrivacyCompat(lang){renderPrivacy(lang);}
 
 function renderTerms(lang){
   var c=legalTerms[lang]||legalTerms['es'];
-  var toc='<ol>'+c.toc.map(function(t,i){return '<li>'+(i+1)+'. '+t+'</li>';}).join('')+'</ol>';
+  var toc='<ol>'+c.toc.map(function(t,i){return '<li>'+t+'</li>';}).join('')+'</ol>';
   var s3li='<ul>'+c.s3list.map(function(x){return '<li>'+x+'</li>';}).join('')+'</ul>';
   var s7li='<ul>'+c.s7list.map(function(x){return '<li>'+x+'</li>';}).join('')+'</ul>';
   var s8li='<ul>'+c.s8list.map(function(x){return '<li>'+x+'</li>';}).join('')+'</ul>';
@@ -2506,7 +2506,7 @@ function renderCookies(lang){
       +'</tbody></table>';
   }
   var defs='<dl>'+c.defs.map(function(d){return '<dt><strong>'+d[0]+'</strong></dt><dd>'+d[1]+'</dd>';}).join('')+'</dl>';
-  var toc='<ol>'+c.toc.map(function(t,i){return '<li>'+(i+1)+'. '+t+'</li>';}).join('')+'</ol>';
+  var toc='<ol>'+c.toc.map(function(t,i){return '<li>'+t+'</li>';}).join('')+'</ol>';
   var h='<h1>'+c.h1+'</h1>'
     +'<p>'+c.intro+'</p>'
     +'<p><strong>'+c.rev+'</strong></p>'
