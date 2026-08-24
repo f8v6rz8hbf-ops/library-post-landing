@@ -3,8 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script>(function(){var lp=new URLSearchParams(location.search).get('legal');if(lp&&['terms','privacy','cookies'].includes(lp)){document.documentElement.classList.add('lp-legal-mode');}})();</script>
-  <style>html.lp-legal-mode #main-content,html.lp-legal-mode .ck-overlay{display:none!important;}</style>
 
   <!-- Primary Meta -->
   <title>LibraryPost — Genera contenido de Instagram para tu librería con IA</title>
@@ -2600,7 +2598,7 @@ function setLang(l){localStorage.setItem('lpLang',l);applyLang(l);var lp=documen
 function toggleFtLang(){const btn=document.getElementById('ft-lang-btn');const dd=document.getElementById('ftLangDropdown');dd.classList.toggle('open');btn.setAttribute('aria-expanded',dd.classList.contains('open')?'true':'false');}
 document.addEventListener('click',function(e){if(!e.target.closest('.ft-ls')){const btn=document.getElementById('ft-lang-btn');const dd=document.getElementById('ftLangDropdown');if(dd)dd.classList.remove('open');if(btn)btn.setAttribute('aria-expanded','false');}});
 function showPage(p){document.getElementById('main-content').style.display='none';document.getElementById('legal-pages').style.display='block';['privacy','terms','cookies'].forEach(x=>document.getElementById('page-'+x).style.display='none');document.getElementById('page-'+p).style.display='block';var l=localStorage.getItem('lpLang')||'es';if(p==='privacy')renderPrivacy(l);else if(p==='terms')renderTerms(l);else if(p==='cookies')renderCookies(l);window.scrollTo(0,0);}
-function showMain(){document.getElementById('legal-pages').style.display='none';document.getElementById('main-content').style.display='block';window.scrollTo(0,0);}
+function showMain(){document.getElementById('legal-pages').style.display='none';document.getElementById('main-content').style.display='block';window.scrollTo(0,0);if(!localStorage.getItem(CK_KEY)){initCookies();}}
 function toggleFaq(btn){const item=btn.closest('.faq-item');const expanded=btn.getAttribute('aria-expanded')==='true';btn.setAttribute('aria-expanded',String(!expanded));btn.querySelector('.faq-icon').textContent=expanded?'+':'−';item.classList.toggle('collapsed',expanded);}
 const CK_KEY='lp-cookie-consent';
 function trapFocus(modal){
