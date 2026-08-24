@@ -373,7 +373,7 @@
         <button class="ck-btn-ess" onclick="saveCookies(false)" id="ck-btn-ess">Solo necesarias</button>
         <button class="ck-btn-all" onclick="saveCookies(true)" id="ck-btn-all">Aceptar todas</button>
       </div>
-      <p class="ck-legal"><span id="ck-legal-txt">Al continuar navegando aceptas nuestra</span> <a href="?legal=cookies" target="_blank" rel="noopener noreferrer" onclick="return openLegalPopup(event,'cookies')" id="ck-legal-link">Política de Cookies</a>.</p>
+      <p class="ck-legal"><span id="ck-legal-txt">Al continuar navegando aceptas nuestra</span> <a href="?legal=cookies" target="_blank" rel="noopener noreferrer" id="ck-legal-link">Política de Cookies</a>.</p>
     </div>
   </div>
 
@@ -2601,12 +2601,6 @@ function showPage(p){document.getElementById('main-content').style.display='none
 function showMain(){document.getElementById('legal-pages').style.display='none';document.getElementById('main-content').style.display='block';window.scrollTo(0,0);}
 function toggleFaq(btn){const item=btn.closest('.faq-item');const expanded=btn.getAttribute('aria-expanded')==='true';btn.setAttribute('aria-expanded',String(!expanded));btn.querySelector('.faq-icon').textContent=expanded?'+':'−';item.classList.toggle('collapsed',expanded);}
 const CK_KEY='lp-cookie-consent';
-function openLegalPopup(e,page){
-  if(e)e.preventDefault();
-  var w=window.open('?legal='+page,'lpLegalPopup','width=560,height=720,resizable=yes,scrollbars=yes,noopener,noreferrer');
-  if(!w){window.open('?legal='+page,'_blank','noopener,noreferrer');}
-  return false;
-}
 function trapFocus(modal){
   const focusable=modal.querySelectorAll('button,[href],input,select,textarea,[tabindex]:not([tabindex="-1"])');
   const first=focusable[0];
