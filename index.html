@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>(function(){var lp=new URLSearchParams(location.search).get('legal');if(lp&&['terms','privacy','cookies'].includes(lp)){document.documentElement.classList.add('lp-legal-mode');}})();</script>
+  <style>html.lp-legal-mode #main-content,html.lp-legal-mode .ck-overlay{display:none!important;}</style>
 
   <!-- Primary Meta -->
   <title>LibraryPost — Genera contenido de Instagram para tu librería con IA</title>
@@ -2680,7 +2682,7 @@ function scaleIpadMockup(){
 scaleIpadMockup();
 window.addEventListener('resize',scaleIpadMockup);
 window.addEventListener('load',scaleIpadMockup);
-(function(){var lp=new URLSearchParams(location.search).get('legal');if(lp&&['terms','privacy','cookies'].includes(lp)){window.addEventListener('load',function(){showPage(lp);});}})();
+(function(){var lp=new URLSearchParams(location.search).get('legal');if(lp&&['terms','privacy','cookies'].includes(lp)){showPage(lp);}})();
 (function(){
   var PRICES={
     USD:{basic:'$19',std:'$39',prem:'$79'},
