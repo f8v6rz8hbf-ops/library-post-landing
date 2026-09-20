@@ -94,7 +94,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="dns-prefetch" href="https://ipapi.co">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
   <style>
     *{box-sizing:border-box;margin:0;padding:0;}
     html.lp-lang-pending #main-content{visibility:hidden;}
@@ -150,7 +149,7 @@
     .fmt h2{text-align:center;margin:0 0 2rem;}
     .fmt-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1rem;}
     .fmt-card{border:1px solid var(--line);background:var(--cream);padding:1.5rem 1rem;text-align:center;}
-    .fmt-card i{font-size:1.5rem;color:var(--muted);margin-bottom:.75rem;display:block;}
+    .fmt-card .fmt-icon{width:1.5rem;height:1.5rem;color:var(--muted);margin:0 auto .75rem;display:block;}
     .fmt-card h3{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;margin:0;color:var(--ink);font-weight:500;}
     .fmt-card p{font-size:.82rem;color:var(--muted);margin:.4rem 0 0;}
     .price{border-bottom:1px solid var(--line);}
@@ -594,10 +593,10 @@
       <p class="slabel" style="text-align:center;" id="fmt-label">Available formats</p>
       <h2 id="fmt-h2">Everything you need</h2>
       <div class="fmt-grid">
-        <div class="fmt-card"><i class="ti ti-layout-grid" aria-hidden="true"></i><h3 id="fmt1-h">Feed post</h3><p id="fmt1-p">Long, literary text with an impactful opening</p></div>
-        <div class="fmt-card"><i class="ti ti-device-mobile" aria-hidden="true"></i><h3>Story</h3><p id="fmt2-p">Short, direct text for 24h stories</p></div>
-        <div class="fmt-card"><i class="ti ti-layout-columns" aria-hidden="true"></i><h3 id="fmt3-h">Carousel</h3><p id="fmt3-p">Individual slides with layered content</p></div>
-        <div class="fmt-card"><i class="ti ti-player-play" aria-hidden="true"></i><h3>Reel</h3><p id="fmt4-p">Script optimised for vertical video format</p></div>
+        <div class="fmt-card"><svg class="fmt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1l0 -4" /><path d="M14 5a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1l0 -4" /><path d="M4 15a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1l0 -4" /><path d="M14 15a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1l0 -4" /></svg><h3 id="fmt1-h">Feed post</h3><p id="fmt1-p">Long, literary text with an impactful opening</p></div>
+        <div class="fmt-card"><svg class="fmt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 5a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2v-14" /><path d="M11 4h2" /><path d="M12 17v.01" /></svg><h3>Story</h3><p id="fmt2-p">Short, direct text for 24h stories</p></div>
+        <div class="fmt-card"><svg class="fmt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2l0 -12" /><path d="M12 4l0 16" /></svg><h3 id="fmt3-h">Carousel</h3><p id="fmt3-p">Individual slides with layered content</p></div>
+        <div class="fmt-card"><svg class="fmt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4v16l13 -8l-13 -8" /></svg><h3>Reel</h3><p id="fmt4-p">Script optimised for vertical video format</p></div>
       </div>
     </section>
 
@@ -686,7 +685,7 @@
       </p>
       <div class="ft-ls">
         <button class="ft-lb" id="ft-lang-btn" onclick="toggleFtLang()" aria-label="Cambiar idioma" aria-expanded="false" aria-controls="ftLangDropdown">
-          <i class="ti ti-world" aria-hidden="true" style="font-size:12px;"></i>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" /><path d="M3.6 9h16.8" /><path d="M3.6 15h16.8" /><path d="M11.5 3a17 17 0 0 0 0 18" /><path d="M12.5 3a17 17 0 0 1 0 18" /></svg>
           <span id="ft-lang-name">English</span>
           <span style="font-size:9px;opacity:.6;">▾</span>
         </button>
