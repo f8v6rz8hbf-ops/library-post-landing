@@ -2661,6 +2661,7 @@ new IntersectionObserver(([e])=>{const p=!e.isIntersecting;_navBtns.forEach(b=>{
 if(window._lpSyncLang){
   applyLang(window._lpSyncLang);
   document.documentElement.classList.remove('lp-lang-pending');
+  lpInitCookiesOnce();
 }else{
   // Only call geolocation API when no lang signal existed (true first visit, no ?lang= param)
   // Resolve exactly once: whichever of {geo-IP success, 400ms timeout} fires first wins;
@@ -2671,6 +2672,7 @@ if(window._lpSyncLang){
     lpResolved=true;
     applyLang(lang);
     document.documentElement.classList.remove('lp-lang-pending');
+    lpInitCookiesOnce();
   };
   var lpGeoTimer=setTimeout(function(){lpResolveOnce(detectLang(null));},400);
   fetch('https://ipapi.co/json/').then(function(r){return r.json();}).then(function(d){
@@ -2681,6 +2683,7 @@ if(window._lpSyncLang){
     lpResolveOnce(detectLang(null));
   });
 }
+function lpInitCookiesOnce(){if(!new URLSearchParams(location.search).get('legal')){initCookies();}}
 let ipadAnimationPlaying=true;
 const playBtn=document.getElementById('ipad-play-btn');
 if(playBtn){
@@ -2695,7 +2698,6 @@ if(playBtn){
     playBtn.setAttribute('aria-label',ipadAnimationPlaying?'Pause':'Play');
   });
 }
-if(!new URLSearchParams(location.search).get('legal')){initCookies();}
 /* Scale iPad mockup to fit mobile screens — renders at 680px then scales to container */
 function scaleIpadMockup(){
   var bezel=document.querySelector('.ipad-bezel');
