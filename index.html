@@ -2664,8 +2664,7 @@ if(window._lpSyncLang){
   lpInitCookiesOnce();
 }else{
   // Only call geolocation API when no lang signal existed (true first visit, no ?lang= param)
-  // Resolve exactly once: whichever of {geo-IP success, 400ms timeout} fires first wins;
-  // a later-arriving geo-IP response is ignored via the lpResolved flag.
+  // Resolve exactly once, from the real outcome of ipapi.co — no timer competes with it.
   var lpResolved=false;
   var lpResolveOnce=function(lang){
     if(lpResolved)return;
@@ -2674,12 +2673,9 @@ if(window._lpSyncLang){
     document.documentElement.classList.remove('lp-lang-pending');
     lpInitCookiesOnce();
   };
-  var lpGeoTimer=setTimeout(function(){lpResolveOnce(detectLang(null));},400);
   fetch('https://ipapi.co/json/').then(function(r){return r.json();}).then(function(d){
-    clearTimeout(lpGeoTimer);
     lpResolveOnce(detectLang(d.country_code));
   }).catch(function(){
-    clearTimeout(lpGeoTimer);
     lpResolveOnce(detectLang(null));
   });
 }
